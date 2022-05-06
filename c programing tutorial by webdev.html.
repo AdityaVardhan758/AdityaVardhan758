@@ -1,0 +1,4038 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+<style>
+body {
+margin 0;
+}
+.sidemenu {
+ margin: 0;
+ padding: 0;
+ background-color: white;
+ color: black;
+ text-align: center;
+ position: fixed;
+ height: 100%;
+ overflow: auto;
+}
+.sidemenu a{
+ display: block;
+ font-family: "Georgia", sans-serif;
+ border:3px solid pink;
+ border-radius: 10px;
+ color: black;
+ padding: 15px;
+ text-decoration: none;
+}
+.sidemenu a:hover, a:active{
+ background-color: skyblue;
+ color: white;
+}
+div.content {
+ font-family: "Lora", sans-serif;
+ margin: 15px 0px 100px 350px ;
+ padding: 1px 16px;
+ height: 5000px;
+}
+#ifelse {
+  border-left: 10px solid red;
+  background-color: lightgray;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+<div class="sidemenu">
+<a href="#tutorial">C TUTORIAL</a>
+<a href="#introduction">INTRODUCTION</a>
+<a href="#preprocessor">C PREPROCESSOR</a>
+<a href="#headerfile">C HEADER FILES</a>
+<a href="#token">C TOKENS</a>
+<a href="#identifier">C INDENTIFIERS</a>
+<a href="#keywords">C KEYWORDS</a>
+<a href="#constant">C CONSTANTS</a>
+<a href="#operator">C OPERATORS</a>
+<a href="#datatype">C DATA TYPES</a>
+<a href="#variable">C VARIABLES</a>
+<a href="#typecasting">C TYPE CASTING</a>
+<a href="#pstructure">C PROGRAM STRUCTURE</a>
+<a href="#inou">C INPUT AND OUTPUT(I/O)</a>
+<a href="#ifstatement">C IF STATEMENT</a>
+<a href="#ifestatement">C IF-ELSE STATEMENT</a>
+<a href="#neifestatement">C NESTED IF-ELSE STATEMENT</a>
+<a href="#eifstatement">C ELSE-IF STATEMENT</a>
+<a href="#gotostatement">C GOTO STATEMENT</a>
+<a href="#switchstatement">C SWITCH STATEMENT</a>
+<a href="#loop">C LOOPS</a>
+<a href="#wloop">C WHILE LOOPS</a>
+<a href="#floop">C FOR LOOPS</a>
+<a href="#dwloop">C DO-WHILE LOOPS</a>
+<a href="#function">C FUNCTIONS</a>
+<a href="#functionargument">C FUNCTION ARGUMENTS</a>
+<a href="#library">C LIBRARY FUNCTION</a>
+<a href="#variablescope">C VARIABLE SCOPE</a>
+<a href="#recursion">C RECURSION</a>
+<a href="#storageclass">C STORAGE CLASS</a>
+<a href="#array">C ARRAYS</a>
+<a href="#string">C STRING</a>
+<a href="#pointer">C POINTERS</a>
+<a href="#memorymanag">C MEMORY MANAGEMENT</a>
+<a href="#dynamic">C DYNAMIC MEMORY ALLOCATION</a>
+<a href="#structure">C STRUCTURE</a>
+<a href="#union">C UNION</a>
+<a href="#typedef">C typedef</a>
+<a href="#file">C FILE HANDLING</a>
+<a href="#fopenclose">C fopen and close</a>
+<a href="#getputc">C getc and putc</a>
+<a href="#getputw">C getw and putw</a>
+<a href="#fprintscanf">C fprintf and fscanf</a>
+<a href="#fgetputs">C fgets and puts</a>
+<a href="#feof">C feof</a>
+</div>
+
+<!--C TUTORIAL WELCOME PAGE-->
+<div class="content">
+<h1 id="tutorial" style="font-family:times new roman;" align="center">C TUTORIAL</h1>
+<p>HELLo!!!! Welcome TO C Programing Tutorial</p>
+<p>C is one of the most widely used computer programming language. C is very powerful computer programming language
+  and can be used for developing small general-purpose computer application to very complex real time applications.
+  C is mainly used for the development of system applications.This Tutorial will help you understand basic to advance
+  C programming concepts.</p>
+</div>
+
+<!--INTRODUCTION-->
+<div class="content">
+<h1 id="introduction" style="font-family:times new roman;" align="center">INTRODUCTION</h1>
+</div>
+
+<!--PREPROCESSOR-->
+<div class="content">
+<h1 id="preprocessor" style="font-family:times new roman;" align="center">C PREPROCESSOR</h1>
+<p>Preprocessor Directives extends the power of C programming language.C Preprocessors Directives is a special set of instruction in program which is
+  processed before handing over the program to the compiler. These instructions are always preceded by a pound sign (#) and NOT terminated by a semicolon.
+  The preprocessor directives are executed before the actual compilation of code begins.Different preprocessor directives (commands) tell the preprocessor
+  to perform different actions.<br> We can categorize the Preprocessor Directives as follows:
+ <ul><li>File inclusion directives</li>
+  <li>Macro substitution directives</li>
+  <li>Conditional compilation directives</li></ul>
+</p>
+<h3>Advantages:</h3>
+<ul type="square"><li>It make program development easy.</li>
+  <li>It enhance the readability of the program</li>
+  <li>It make modification easy.</li>
+  <li>It increase the transportability of the program between different machine architectures.</li></ul>
+<br>
+ <div>
+ <h3>File Inclusion Directives</h3>
+ <p>The file inclusion directive is used to include files into the current file. When the preprocessor encounters an
+   #include directive it replaces it by the entire content of the specified file.The file inclusion directive (#include)
+   can be used in following two ways:</p>
+ <p><code><pre>
+    #include “file-name”
+    #include &lt;file-name&gt;
+ </pre></code></p>
+ <p>We can see that #include can be used in two ways angular brackets (<>)and inverted commas (“”). The only difference
+   between both expressions is the location (directories) where the compiler is going to look for the file. In the first
+   case where the file name is specified between double-quotes, the compiler will look for the in the current directory
+   that includes the file containing the directive. In case if it is not there the compiler will look the file in the
+   default include directories where it is configured to look for the standard header files.When #include is written with
+   <> it means the file is searched directly where the compiler is configured to look for the standard header files.
+   Therefore, standard header files are usually included in angle-brackets, while other specific header files are included
+   using quotes.</p>
+ <b>EXAMPLE:</b>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  #include "head.h"
+ 
+  int main() 
+  {
+ 
+  printf("The variable from the head file: h = %d", h);
+  return 0;
+  }
+ </pre></code></p>
+ <p>Then save the code below in a file called head.h and place it in the same directory as main.c:</p>
+ <p><code><pre>
+    #ifndef __mynamespace__
+    int h = 5;
+    #endif
+ </pre></code></p>
+ <p>The variable declared in the head.h file will be available in main.c, now we can use the variable in main().</p>
+ </div>
+<br><br>
+ <div>
+ <h3>Macro Substitution Directives</h3>
+ <p>Macro substitution directives are used to define identifier which is being replaced by a pre defined string in
+   program.Macro substitution is process in which preprocessor replaces identifiers by one, or more program statements
+   (like functions) and they are expanded inline.</p><br>There are two directives for Macro Definition:
+ <ul>
+   <li>#define – Used to define a macro</li>
+   <li>#undef – Used to undefine a macro</li>
+ </ul>
+ <b>#define preprocessor</b>
+ <p>To define preprocessor macros we can use #define.</p><br>
+ <b>Syntax:</b>
+ <p><code><pre>
+   #define identifier token_string
+ </pre></code></p><br>
+ <b>Example:</b>
+ <p><code><pre>
+    #define PI 3.14
+ </pre></code></p>
+ <p>The token string in above line 3.14 is replaced in every occurance of symbolic constant PI.</p>
+ <b>C Program to find area of a cricle.</b>
+ <p><code><pre>
+   #include &lt;stdio.h&gt;
+   #define PI 3.14
+   int main()
+   {
+     int radius;
+     float area;
+     printf("Enter the radius: ");
+     scanf("%d",&radius);
+     area=PI*radius*radius;
+     printf("Area=%.2f",area);
+     return 0;
+   }
+ </pre></code></p>
+ <h4>Output:</h4>
+  <div id="ifelse">Enter the radius: 3 <br>Area=28.27</div>
+ </div>
+<br><br>
+ <div>
+ <h3>Conditional compilation directives(#ifdef, #ifndef, #if, #endif, #else and #elif)</h3>
+ <p>Conditional Compilation Directives allows you to include or exclude certain part of code only when certain
+   condition met.These macros are evaluated on compile time.<br>The following directives are included in this category:
+  <ul><li> #if </li>
+      <li> #elif </li>
+      <li> #endif </li>
+      <li> #ifdef </li>
+      <li> #ifndef </li>
+  </ul>
+ </p>
+ </div>
+<br><br>
+ <div>
+ <h3>Line control (#line) directive:</h3>
+ <p>The #line directive give us a way to control or set the value of the __LINE__ and __FILE__ macros.
+   (Note: the filename is optional.) The <strong>__LINE__ and __FILE__</strong> macros represent the current line being read and the
+   current file being read.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+    #line number "filename"
+ </pre></code></p>
+ </div>
+<br><br>
+ <div>
+ <h3>Error directive (#error)</h3>
+ <p>Error directive allows to aborts the compilation process when it is found, ant report a fatal error that can be
+   specified as its parameter.</p>
+ <p><code><pre>
+   #if !defined(__cplusplus)
+   #error C++ compiler required.
+   #endif
+ </pre></code></p>
+ </div>
+<br><br>
+ <div>
+ <h3>Pragma directive (#pragma)</h3>
+ <p>The #pragma directive is compiler specific directives and used for the suppression of specific error messages.</p><br>
+ <h4>Predefined Macros</h4>
+ <h2>__LINE__</h2>
+ <p>It represents the line number of the current source file being compiled.</p><br>
+ <h2>__FILE__</h2>
+ <p>It represents the name of the source file being compiled.</p><br>
+ <h2>__DATE__</h2>
+ <p>It returns the date, in the form “Mmm dd yyyy”, when the compilation process began.</p><br>
+ <h2>__TIME__</h2>
+ <p>A string literal in the form “hh:mm:ss” containing the time at which the compilation process began.</p><br>
+ <h2>__STDC__</h2>
+ <p>Forces the use of standard C/CPP codes only in the program.</p><br>
+ </div> 
+</div>
+
+<!--HEADER FILES-->
+<div class="content">
+<h1 id="headerfile" style="font-family:times new roman;" align="center">C HEADER FILES</h1>
+<p>C language is famous for its different libraries and the predefined functions pre-written within it. These make
+  programmer's effort a lot easier.In C Programming Language Header Files gives us way to reuse the external declarations, functions or macro
+  definition and allows us to share between other source files.When you include a header file, the compiler adds the
+  functions, data types, and other information in the header file to the list of reserved words and commands in the
+  language. We can include a header file in our program using C Preprocessor Directive “#include”, Header files almost
+  always have a .h extension.Including header file produces the same result as you copy the source code in your program.</p>
+<h3>What are Header files</h3>
+<p>Header files are helping file of your C program which holds the definitions of various functions and their
+  associated variables that needs to be imported into your C program with the help of pre-processor #include statement.
+  All the header file have a '.h' an extension that contains C function declaration and macro definitions. In other words,
+  the header files can be requested using the preprocessor directive #include. The default header file that comes with
+  the C compiler is the stdio.h.Including a header file means that using the content of header file in your source program.
+  A straightforward practice while programming in C or C++ programs is that you can keep every macro, global variables,
+  constants, and other function prototypes in the header files.</p>
+<b>Syntax:</b>
+<p><code><pre>
+  #include &lt;file&gt;
+</pre></code></p>
+<p><code><pre>
+  #include "file"
+</pre></code></p>
+<p>This kind of file inclusion is implemented for including system oriented header files. This technique (with
+ angular braces) searches for your file-name in the standard list of system directories or within the compiler's
+ directory of header files. Whereas, the second kind of header file is used for user-defined header files or other
+ external files for your program. This technique is used to search for the file(s) within the directory that contains
+ the current file.</p>
+<br>
+ <div>
+ <h3>How include works?</h3>
+ <p>C's #include preprocessor directive statement tries to go through the C preprocessors to scan for a specific file,
+  such as input, before following the rest of your existing source file.  Let us take an example where you may think
+  of having a header file karl.h having the following statement:</p>
+ <p><code><pre>
+   char *example (void);
+ </pre></code></p>
+ <p>then, you have a main C source program which seems something like this:</p>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+   
+   int x;
+  #include "karl.h"
+   int main () 
+   {
+     printf("Program done");
+      return 0;
+   }
+ </pre></code></p>
+ <p>So, the compiler will see the entire C program and token stream as:</p>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+
+  int x;
+  char * example (void);
+  int main () 
+  {
+    printf("Program done");
+      return 0;
+  }
+ </pre></code></p>
+ </div>
+<br>
+ <div>
+ <h3>TYPES OF HEADER FILES</h3>
+  <h4>Standard Header Files</h4>
+  <p>It is the set of header files those used for performing various common and standard operations.<br>
+   <strong>stdio.h</strong> – Defines core input and output functions<br>
+   <strong>string.h</strong> – Defines string handling functions.<br>
+   <strong>time.h</strong> – Defines date and time handling functions<br>
+   <strong>math.h</strong> – Defines common mathematical functions.<br>
+<br>
+  <h4>User Defined Header Files</h4>
+  <p>In C Programming Language user can have their own custom header file that provide additional capabilities.</p>
+<br>
+  <h4>How to Create Your Own Header File in C Programming Language</h4>
+ <p><strong>Step #1</strong><br></p>
+ <p>Type the below source code in a file<br></p>
+ <p><code><pre>
+    int add(int a,int b)
+    {
+     return(a+b);
+    }
+ </pre></code></p>
+ <p>Put only function definition as you write in General C Program.</p><br>
+
+ <p><strong>Step #2</strong></p>
+ <ul><li>Save Above Code with [.h ] Extension.</li>
+  <li>Let name of our header file be myhead [ myhead.h ].</li>
+  <li>Compile Code if required.</li></ul>
+ <p><strong>Step #3</strong></p>
+ <p>Write Main Program</p>
+ <p><code><pre>
+   #include &lt;stdio.h&gt;
+   #include "myhead.h"
+   void main()
+   {
+    int number1=10,number2=10,number3;
+    number3 = add(number1,number2);
+    printf("Addition of Two numbers : %d",number3);
+   }
+ </pre></code></p>
+ <ul><li>Include Our New Header File.</li> 
+  <li>Instead of writing < myhead.h> use this terminology “myhead.h”.</li>
+  <li>All the Functions defined in the myhead.h header file are now ready for use .</li>
+  <li>Directly call function add(); [Provide proper parameter and take care of return type].</li></ul>
+ <p>While running your program both files (myhead.h and sample.c) should be in same directory.</p><br>
+<br>
+ <h3>Writing of Single and Multiple uses of Header File</h3>
+ <p>You can use various header files based on some conditions. In case, when a header file needs to be included twice
+   within your program, your compiler will be going to process the contents inside it - twice which will eventually
+   lead to an error in your program. So to eliminate this, you have to use conditional preprocessor directives.</p><br>
+ <b>Syntax:</b>
+ <p><code><pre>
+  #ifndef HEADER_FILE_NAME
+  #define HEADER_FILE_NAME
+     the entire header file
+  #endif
+ </pre></code></p>
+ <p>Again, sometimes it's essential for selecting several diverse header files based on some requirement to be incorporated
+   into your program. For this also multiple conditional preprocessors can be used like this:</p>
+ <p><code><pre>
+   #if FIRST_SYSTEM
+     #include "sys.h"
+   #elif SEC_SYSTEM
+     #include "sys2.h"
+   #elif THRID_SYSTEM
+     ....
+   #endif
+ </pre></code></p>
+ </div>
+</div>
+
+<!--TOKENS-->
+<div class="content">
+<h1 id="token" style="font-family:times new roman;" align="center">C TOKENS</h1>
+<p>In C programs, each word and punctuation is referred to as a token. C Tokens are the smallest building block or
+  smallest unit of a C program.<br>The compiler breaks a program into the smallest possible units and proceeds to the
+  various stages of the compilation, which is called <strong>token</strong>.</p>
+<p>C Supports Six Types of Tokens:
+<ol><li>Identifiers</li>
+ <li>Keywords</li>
+ <li>Constants</li>
+ <li>Strings</li>
+ <li>Operators</li>
+ <li>Special Symbols</li>
+</ol>
+</p>
+</div>
+
+<!--IDENTIFIERS-->
+<div class="content">
+<h1 id="identifier" style="font-family:times new roman;" align="center">C IDENTIFIERS</h1>
+<p>Identifiers are names given to different entities such as constants, variables, structures, functions, etc.</p>
+ <b>Example:</b>
+ <p><code<pre>
+    int amount;
+    double totalbalance;
+ </pre></code></p>
+<p>In the above example, <strong>amount</strong> and <strong>totalbalance</strong> are identifiers and int, and double are keywords.</p>
+<h4>Rules for Identifiers:</h4>
+<ul><li>An identifier can only have alphanumeric characters (a-z , A-Z , 0-9) (i.e. letters & digits) and underscore( _ )
+  symbol.</li>
+ <li>Identifier names must be unique</li>
+ <li>The first character must be an alphabet or underscore.</li>
+ <li>You cannot use a keyword as identifiers.</li>
+ <li>Only the first thirty-one (31) characters are significant.</li>
+ <li>It must not contain white spaces.</li>
+ <li>Identifiers are case-sensitive.</li>
+ </ol>
+</div>
+
+<!--KEYWORDS-->
+<div class="content">
+<h1 id="keywords" style="font-family:times new roman;" align="center">C KEYWORDS</h1>
+<p>In C Programming Language there are set words that you cannot use as an identifier. These words are known as
+  “reserved” words or “Keywords”. Keywords are standard identifiers and their meaning and purpose is predefined by the
+   compiler.<br>The C Keywords must be in your information because you can not use them as a variable name.You can't
+  use a keyword as an identifier in your C programs, its reserved words in C library and used to perform an internal
+  operation. The meaning and working of these keywords are already known to the compiler.</p>
+<h3>C Keywords</h3>
+<p>A list of <b>32 reserved keywords</b> in C Programing:</p><br>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<td align="center" height="50" width="100">auto</td>
+<td align="center" height="50" width="100">double</td>
+<td align="center" height="50" width="100">int</td>
+<td align="center" height="50" width="100">struct</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">break</td>
+<td align="center" height="50" width="100">else</td>
+<td align="center" height="50" width="100">long</td>
+<td align="center" height="50" width="100">switch</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">case</td>
+<td align="center" height="50" width="100">enum</td>
+<td align="center" height="50" width="100">register</td>
+<td align="center" height="50" width="100">typedef</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">char</td>
+<td align="center" height="50" width="100">extern</td>
+<td align="center" height="50" width="100">return</td>
+<td align="center" height="50" width="100">union</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">const</td>
+<td align="center" height="50" width="100">float</td>
+<td align="center" height="50" width="100">short</td>
+<td align="center" height="50" width="100">unsigned</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">continue</td>
+<td align="center" height="50" width="100">for</td>
+<td align="center" height="50" width="100">signed</td>
+<td align="center" height="50" width="100">void</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">default</td>
+<td align="center" height="50" width="100">goto</td>
+<td align="center" height="50" width="100">sizeof</td>
+<td align="center" height="50" width="100">volatile</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">do</td>
+<td align="center" height="50" width="100">if</td>
+<td align="center" height="50" width="100">static</td>
+<td align="center" height="50" width="100">while</td>
+</tr>
+</table>
+<br>
+ <b>Example:</b>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  int main()
+  {
+    float a, b;
+    printf("Showing how keywords are used.");
+    return 0;
+  }
+ </pre></code></p>
+<p>In the above program, float and return are keywords. The float is used to declare variables, and return is used to
+  return an integer type value in this program.</p>
+<p><strong>Note:-</strong>We cannot use keywords for declaring Variable Name,For Function Name and for declaring
+  Constant Variable</p>
+</div>
+
+<!--CONSTANTS-->
+<div class="content">
+<h1 id="constant" style="font-family:times new roman;" align="center">C CONSTANTS</h1>
+<p>Constants are like a variable, except that their value never changes during execution once defined.<br>C Constants
+ is the most fundamental and essential part of the C programming language. Constants in C are the fixed values that
+ are used in a program, and its value remains the same during the entire execution of the program.<br>
+<ul type="square"><li>Constants are also called literals.</li>
+  <li>Constants can be any of the data types.</li>
+  <li>It is considered best practice to define constants using only upper-case names.</li></ul>
+<br>
+<h3>Constant Defination in C</h3>
+<b>Syntax:</b>
+<p><code><pre>
+   const type constant_name;
+</pre></code></p>
+<p><strong>const keyword</strong> defines a constant in C.</p>
+<b>Example:</b>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+ void main()
+ {
+   const int SIDE = 10;
+   int area;
+   area = SIDE*SIDE;
+   printf("The area of the square with side: %d is: %d sq. units"
+   , SIDE, area);
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">The area of the square with side 10 is: 100sq.units</div>
+<p>Putting const either before or after the type is possible.
+<p><code><pre>
+  int const SIDE = 10;
+</pre></code></p>
+or
+<p><code><pre>
+  const int SIDE = 10;
+</pre></code></p>
+<br>
+<h3>Types of Constants in c</h3>
+<p>Constants are categorized into two basic types, and each of these types has its subtypes/categories. These are:</p>
+<p style="background-color:lightblue">Primary Constants</p>
+ <ol><li>Numeric Constants</li>
+     <ul type="disc"><li>Integer Constants</li>
+       <li>Real Constants</li></ul>
+  <li>Character Constants</li>
+      <ul type="disc"><li>Single Character Constants</li>
+        <li>String Constants</li>
+        <li>Backslash Character Constants</li></ul>
+ </ol>
+<ol type="A">
+<h4><li>Integer Constant</li></h4>
+<p>It's referring to a sequence of digits. Integers are of three types viz:</p>
+<ol><li>Decimal Integer</li>
+ <li>Octal Integer</li>
+ <li>Hexadecimal Integer</li></ol>
+<b>Example:</b>
+<p><code><pre>
+15, -265, 0, 99818, +25, 045, 0X6
+</pre></code></p><br>
+
+<h4><li>Real Constant</li></h4>
+<p>The numbers containing fractional parts like 99.25 are called real or floating points constant.</p>
+  
+<h4><li>Single Character Constants</li></h4>
+<p>It simply contains a single character enclosed within ' and ' (a pair of single quote). It is to be noted that
+  the character <strong>'8'</strong> is not the same as <strong>8</strong>. Character constants have a specific set of integer values known as
+  ASCII values (American Standard Code for Information Interchange).</p>
+<b>Example:</b>
+<p><code><pre>
+'X', '5', ';'
+</pre></code></p>
+
+<h4><li>String Constant</li></h4>
+<p>These are a sequence of characters enclosed in double quotes, and they may include letters, digits, special
+  characters, and blank spaces. It is again to be noted that "G" and 'G' are different - because "G" represents a
+  string as it is enclosed within a pair of double quotes whereas 'G' represents a single character.</p>
+<b>Example:</b>
+<p><code><pre>
+"Hello!", "2015", "2+1"
+</pre></code></p>
+
+<h4></li>Backslash Character Constant</li></h4>
+<p>C supports some character constants having a backslash in front of it. The lists of backslash characters have a
+  specific meaning which is known to the compiler. They are also termed as "Escape Sequence".</p>
+<b>Example:</b><br>
+<strong>\t</strong> is used to give a tab<br>
+<strong>\n</strong> is used to give a new line<br>
+<h3>Backslash character constant</h3><br>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Constants</th>
+<th align="center" height="50" width="200">Meaning</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\a</td>
+<td align="center" height="50" width="200">beep sound</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\b</td>
+<td align="center" height="50" width="200">backspace</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\f</td>
+<td align="center" height="50" width="200">form feed</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\n</td>
+<td align="center" height="50" width="200">new line</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\r</td>
+<td align="center" height="50" width="200">carriage return</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\t</td>
+<td align="center" height="50" width="200">horizantal tab</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\v</td>
+<td align="center" height="50" width="200">vertical tab</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\'</td>
+<td align="center" height="50" width="200">single quote</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\"</td>
+<td align="center" height="50" width="200">double quote</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\\</td>
+<td align="center" height="50" width="200">backslash</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">\0</td>
+<td align="center" height="50" width="200">null</td>
+</tr>
+</table>
+</body>
+<br>
+<p>Secondary Constant</p>
+ <ul><li>Array</li>
+ <li>Pointer</li>
+ <li>Structure</li>
+ <li>Union</li>
+ <li>Enum</li>
+ </ul>
+</ol>
+</div>
+
+<!--OPERATORS-->
+<div class="content">
+<h1 id="operator" style="font-family:times new roman;" align="center">C OPERATORS</h1>
+<p>C operators are symbols that are used to perform mathematical or logical manipulations. The C programming language
+  is rich with built-in operators. Operators take part in a program for manipulating data and variables and form a
+  part of the mathematical or logical expressions.</p>
+<h3>Types of Operators in c</h3>
+<p style="background-color:lightblue;">C programming language offers various types of operators having different
+  functioning capabilities.</p>
+<ol><li>Arithmetic Operators</li>
+   <li>Relational Operators</li>
+   <li>Logical Operators</li>
+   <li>Assignment Operators</li>
+    <li>Increment and Decrement Operators</li>
+   <li>Conditional Operator</li>
+  <li>Bitwise Operators</li>
+  <li>Special Operators</li>
+</ol>
+
+<br>
+<h3>Arithmetic Operators</h3>
+<p>Arithmetic Operators are used to performing mathematical calculations like addition (+), subtraction (-),
+  multiplication (*), division (/) and modulus (%).</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">COperator</th>
+<th align="center" height="50" width="200">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">+</td>
+<td align="center" height="50" width="200">Addition</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">-</td>
+<td align="center" height="50" width="200">Subtraction</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">*</td>
+<td align="center" height="50" width="200">Multiplication</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">/</td>
+<td align="center" height="50" width="200">Division</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">%</td>
+<td align="center" height="50" width="200">Modulus</td>
+</tr>
+</table>
+<b>Example:</b>
+<p><code><pre>
+ #include &lt;stdio.h&gt;
+ void main()
+ {
+  int i=3,j=7,k; /* Variables Defining and Assign values */
+  k=i+j;
+  printf("sum of two numbers is %d\n", k); 
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">sum of numbers is 10</div>
+<br>
+<h3>Increment and Decrement Operator</h3>
+<p>Increment and Decrement Operators are useful operators generally used to minimize the calculation, i.e. ++x and x++
+  means x=x+1 or -x and x−−means x=x-1. But there is a slight difference between ++ or −− written before or after the
+  operand. Applying the pre-increment first add one to the operand and then the result is assigned to the variable on
+  the left whereas post-increment first assigns the value to the variable on the left and then increment the operand.</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Operator</th>
+<th align="center" height="50" width="200">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">++</td>
+<td align="center" height="50" width="200">Increment</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">--</td>
+<td align="center" height="50" width="200">Decrement</td>
+</tr>
+</table>
+<br>
+<b>Example:</b>
+<p><code><pre>
+   #include &lt;stdio.h&gt;
+  //stdio.h is a header file used for input.output purpose.
+
+  void main()
+  {
+    //set a and b both equal to 5.
+    int a=5, b=5;
+    
+    //Print them and decrementing each time.
+    //Use postfix mode for a and prefix mode for b.
+    printf("\n%d %d",a--,--b);
+    printf("\n%d %d",a--,--b);
+    printf("\n%d %d",a--,--b);
+    printf("\n%d %d",a--,--b);
+    printf("\n%d %d",a--,--b);
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">5 &nbsp 4<br>4 &nbsp 3<br>3 &nbsp 2<br>2 &nbsp 1<br>1 &nbsp 0</div>
+<h3>Relational Operator</h3>
+<p>Relational operators are used to comparing two quantities or values.</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Operator</th>
+<th align="center" height="50" width="200">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">==</td>
+<td align="center" height="50" width="200">Is equal to</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">!=</td>
+<td align="center" height="50" width="200">Is not equal to</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">></td>
+<td align="center" height="50" width="200">Greater than</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100"><</td>
+<td align="center" height="50" width="200">Less than</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">>=</td>
+<td align="center" height="50" width="200">Greater than or equal to</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100"><=</td>
+<td align="center" height="50" width="200">Less than or equal to</td>
+</tr>
+</table>
+<br>
+<h3>Logical Operators</h3>
+<p>C provides three logical operators when we test more than one condition to make decisions. These are: 
+  <strong>&&</strong> (meaning logical AND), <strong>||</strong> (meaning logical OR) and <strong>!</strong> (meaning logical NOT).</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Operator</th>
+<th align="center" height="50" width="800">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">&&</td>
+<td align="center" height="50" width="200">And operator. It performs logical conjunction of two expressions. (if both expressions evaluate to True, result is True. If either expression evaluates to False, the result is False)</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">||</td>
+<td align="center" height="50" width="200">Or operator. It performs a logical disjunction on two expressions. (if either or both expressions evaluate to True, the result is True)</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">!</td>
+<td align="center" height="50" width="200">Not operator. It performs logical negation on an expression.</td>
+</tr>
+</table>
+<br>
+<h3>Bitwise Operator</h3>
+<p>C provides a special operator for bit operation between two variables.</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Operator</th>
+<th align="center" height="50" width="500">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100"><<</td>
+<td align="center" height="50" width="500">Binary Left Shift Operator</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">>></td>
+<td align="center" height="50" width="500">Binary Right Shift Operator</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">~</td>
+<td align="center" height="50" width="500">Binary Ones Complement Operator</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">&</td>
+<td align="center" height="50" width="500">Binary AND Operator</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">^</td>
+<td align="center" height="50" width="500">Binary XOR Operator</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">|</td>
+<td align="center" height="50" width="500">Binary OR Operator</td>
+</tr>
+</table>
+<br>
+<h3>Assignment Operator</h3>
+<p>Assignment operators applied to assign the result of an expression to a variable. C has a collection of shorthand
+  assignment operators.</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Operator</th>
+<th align="center" height="50" width="400">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">=</td>
+<td align="center" height="50" width="400">Assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">+=</td>
+<td align="center" height="50" width="400">Increments then assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">-=</td>
+<td align="center" height="50" width="400">Decrements then assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">*=</td>
+<td align="center" height="50" width="400">Multiplies then assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">/=</td>
+<td align="center" height="50" width="400">Divides then assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">%=</td>
+<td align="center" height="50" width="400">Modulus then assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100"><<=</td>
+<td align="center" height="50" width="400">Left shift and assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">>>=</td>
+<td align="center" height="50" width="400">Right shift and assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">&=</td>
+<td align="center" height="50" width="400">Bitwise AND assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">^=</td>
+<td align="center" height="50" width="400">Bitwise exclusive OR and assign</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">|=</td>
+<td align="center" height="50" width="400">Bitwise inclusive OR and assign</td>
+</tr>
+</table>
+<br>
+<h3>Conditional Operator</h3>
+<p>C offers a ternary operator which is the conditional operator(?:in combination)to construct conditional expressions.</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Operator</th>
+<th align="center" height="50" width="400">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">?:</td>
+<td align="center" height="50" width="400">Conditional Expression</td>
+</tr>
+</table>
+<br>
+<h3>Special Operators</h3>
+<p>C supports some special operators</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Operator</th>
+<th align="center" height="50" width="500">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">sizeof()</td>
+<td align="center" height="50" width="500">Returns the size of a memory location</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">&</td>
+<td align="center" height="50" width="500">Returns the address of a memory location</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">*</td>
+<td align="center" height="50" width="500">Pointer to a variable.</td>
+</tr>
+</table>
+<br>
+<b>Program to Demonstrate the use of sizeof operator</b>
+<b>Example:</b>
+<p><code><pre>
+ #include &lt;stdio.h&gt;
+ void main()
+ {
+    int i=10; // Variables Defining and Assign values
+    printf("integer: %d\n", sizeof(i));
+ }
+</pre></code></p>
+<h4>Output:</h4>
+ <div id="ifelse">integer: 4</div>
+</pre></code></p>
+</div>
+
+<!--DATA TYPES-->
+<div class="content">
+<h1 id="datatype" style="font-family:times new roman;" align="center">C DATA TYPES</h1>
+<p>Like any other programming language in C Programming Language “Variables” are one of the vital building block of 
+  any C Program. Variables are reserved memory locations to store values, when we create a variable we are a suppose
+  to allocate some memory space for that variable.The C programming language is statically-typed, which means that
+  all variables must first be declared before they can be used. This involves stating the variable’s data type and
+  name of variable.</p>
+<b>Example:</b>
+<p><code><pre>
+  int sum= 0;
+</pre></code></p>
+<p>In C Programming Language every variable must have attached a data type to it, data type for a variable defines :</p>
+<ul><li>The amount of memory space allocated for variables.</li>
+ <li>A data type specifies the possible values for variables.</li>
+<li>The operations that can be performed on variables.</li>
+</ul><br>
+<p>In C Programming Language data types can be broadly classified as :</p>
+<ul type="square">
+ <li>Primary data types – <strong>int, float, double, char, void</strong></li>
+ <li>Derived data types – Derived from primitive data type ex: <strong>array, pointer,function etc.</strong></li>
+ <li>User defined – Defined by the programmer himself ex:<strong>structure, union, enum</strong></li>
+</ul>
+<br>
+<h3>Primary Data Types In C Language</h3>
+<p>The C Programming Language supports primary data types. A primary type is predefined by the language and is named
+  by a reserved keyword.</p>
+<table align="center" border="1" cellspacing="0">
+<tr>
+<td align="center" height="50" width="100">void</td>
+<td align="left" height="50" width="800">As the name suggests, it holds no value and is generally used for specifying the type of function or what it returns. If the function has a void type, it means that the function will not return any value.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">int</td>
+<td align="left" height="50" width="800">Used to denote an integer type.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">char</td>
+<td align="left" height="50" width="200">Used to denote a character type.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">float,double</td>
+<td align="left" height="50" width="200">Used to denote a floating point type.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">int*, float*, char*</td>
+<td align="left" height="50" width="200">Used to denote a pointer type.</td>
+</tr>
+</table>
+<br>
+<br>
+<h4>Integer types</h4>
+<p>Integers are whole numbers.int is used to define integer numbers.</p>
+<b>Syntax:</b>
+<p><code><pre>
+ int &lt;variable name&gt;;
+ Example - 
+ int num1;
+ short int num2;
+ long int num3;
+</pre></code></p> 
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Type</th>
+<th align="center" height="50" width="100">Storage size</th>
+<th align="center" height="50" width="400">Value Range</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">int</td>
+<td align="center" height="50" width="100">2 or 4 bytes</td>
+<td align="center" height="50" width="400">-32,768 to 32767 or -2,147,483,648 to 2,147,483,647</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">unsigned int</td>
+<td align="center" height="50" width="100">2 or 4 bytes</td>
+<td align="center" height="50" width="400">0 to 65,535 or 0 to 4,294,967,295</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">short</td>
+<td align="center" height="50" width="100">2 bytes</td>
+<td align="center" height="50" width="400">-32,768 to 32,767</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">unsigned short</td>
+<td align="center" height="50" width="100">2 bytes</td>
+<td align="center" height="50" width="400">0 to 65,535</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">long</td>
+<td align="center" height="50" width="100">4 bytes</td>
+<td align="center" height="50" width="400">-2,147,483,648 to 2,147,483,647</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">unsigned long</td>
+<td align="center" height="50" width="100">4 bytes</td>
+<td align="center" height="50" width="400">0 to 4,294,967,295</td>
+</tr>
+</table>
+<br>
+<h4>Floating Point Types</h4>
+<p>The float data type is used to store numbers with a decimal point(real number).</p>
+<b>Syntax:</b>
+<p><code><pre>
+ float &lt;variable name>&gt;
+ Example -
+ float num1;
+ double num2;
+ long double num3;
+</pre></code></p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Type</th>
+<th align="center" height="50" width="100">Storage size</th>
+<th align="center" height="50" width="200">Value Range</th>
+<th align="center" height="50" width="200">Precesion</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">float</td>
+<td align="center" height="50" width="100">4 byte</td>
+<td align="center" height="50" width="200">1.2E-38 to 3.4E+38</td>
+<td align="center" height="50" width="200">6 decimal places</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">double</td>
+<td align="center" height="50" width="100">8 byte</td>
+<td align="center" height="50" width="200">2.3E-308 to 1.7E+308</td>
+<td align="center" height="50" width="200">15 decimal places</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">long double</td>
+<td align="center" height="50" width="100">10 byte</td>
+<td align="center" height="50" width="200">3.4E-4932 to 1.1E+4932</td>
+<td align="center" height="50" width="200">19 decimal places</td>
+</tr>
+</table>
+<br>
+<h4>Character Type</h4>
+<p>Used to define characters.Character type variable can hold a single character.</p>
+<b>Syntax:</b>
+<p><code><pre>
+ char &lt;variable name&gt;;
+ Example -
+ char ch = ‘a’;
+</pre></code></p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Type</th>
+<th align="center" height="50" width="100">Storage size</th>
+<th align="center" height="50" width="200">Value Range</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">char</td>
+<td align="center" height="50" width="100">1 byte</td>
+<td align="center" height="50" width="200">-128 to 127 or 0 to 255</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">unsigned char</td>
+<td align="center" height="50" width="100">1 byte</td>
+<td align="center" height="50" width="200">0 to 255</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">signed char</td>
+<td align="center" height="50" width="100">1 byte</td>
+<td align="center" height="50" width="200">-128 to 127</td>
+</tr>
+</table>
+<br>
+<h4>Void Type</h4>
+<p>The void type means no values. It can not be used with variable declaration.It is usually used with function to
+  specify its return type or its arguments.</p>
+<b>Example:</b>
+<p><code><pre>
+ void echo_square(int Number)
+ {
+   printf("%d squared is %d\n",Number, Number*Number);
+ }
+</pre></code></p>
+<h3>Derived Data Types</h3>
+<p>C supports three derived data types:
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="200">Data Types</th>
+<th align="center" height="50" width="800">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="200">Arrays</td>
+<td align="left" height="50" width="800">Arrays are sequences of data items having homogeneous values. They have adjacent memory locations to store values.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="200">References</td>
+<td align="left" height="50" width="800">Function pointers allow referencing functions with a particular signature.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="200">Pointers</td>
+<td align="left" height="50" width="200">These are powerful C features which are used to access the memory and deal with their addresses.</td>
+</tr>
+</table>
+<br>
+<h3>User Defined Data Type</h3>
+<p>C allows the feature called type definition which allows programmers to define their identifier that would
+  represent an existing data type.There are three such types:</p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="200">Data Types</th>
+<th align="center" height="50" width="800">Description</th>
+</tr>
+<tr>
+<td align="center" height="50" width="200">Structure</td>
+<td align="left" height="50" width="800">It is a package of variables of different types under a single name. This is done to handle data efficiently. "struct" keyword is used to define a structure.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="200">Union</td>
+<td align="left" height="50" width="800">These allow storing various data types in the same memory location. Programmers can define a union with different members, but only a single member can contain a value at a given time.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="200">Enum</td>
+<td align="left" height="50" width="200">Enumeration is a special data type that consists of integral constants, and each of them is assigned with a specific name. "enum" keyword is used to define the enumerated data type.</td>
+</tr>
+</table>
+<br>
+<h3>Data type and its Declaration in C</h3>
+<b><mark>Example 1:</mark></b>
+<p><code><pre>
+ #include &lt;stdio.h&gt;
+ int main()
+ {
+    int a = 4000; // positive integer data type
+    float b = 5.2324; // float data type
+    char c = 'Z'; // char data type
+    long d = 41657; // long positive integer data type
+    long e = -21556; // long -ve integer data type
+    int f = -185; // -ve integer data type
+    short g = 130; // short +ve integer data type
+    short h = -130; // short -ve integer data type
+    double i = 4.1234567890; // double float data type
+    float j = -3.55; // float data type
+ }
+</pre></code></p>
+<b><mark>Example 2:</mark></b>
+<p><code><pre>
+ #include &lt;stdio.h&gt;
+ #include &lt;limits.h&gt;
+ int main()
+ {
+    printf("Storage size for int is: %d \n", sizeof(int));
+    printf("Storage size for char is: %d \n", sizeof(char));
+    return 0; 
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">Storage size for int is: 4<br>Storage size for char is: 1<br></div>
+</div>
+
+<!--VARIABLE-->
+<div class="content">
+<h1 id="variable" style="font-family:times new roman;" align="center">C VARIABLES</h1>
+<p>A variable is a name of the memory location. It is used to store data. Its value can be changed, and it can be
+ reused many times. It is a way to represent memory location through symbol so that it can be easily identified.<br>
+<b>Syntax:</b>
+  <p><code><pre>type variable_list;</pre></code></p>
+<b>Example of Variable Declaration:</b><br>
+<p><code><pre>
+    int a; 
+    float b; 
+    char c; 
+</pre></code></p>
+Here, a, b, c are variables. The int, float, char are the data types.<br>
+<p>We can also provide values while declaring the variables as given below:</p><br>
+<p><code><pre>
+  int a=10,b=20;                 //declaring 2 variable of integer type
+  float f=20.8; 
+  char c='A';
+</pre></code></p>
+<br>
+<h3>Rules for defining variables</h3>
+<ul>
+<li>A variable can have alphabets, digits, and underscore.</li>
+<li>A variable name can start with the alphabet, and underscore only. It can't start with a digit.</li>
+<li>No whitespace is allowed within the variable name.</li>
+<li>A variable name must not be any reserved word or keyword, e.g. int, float, etc.</li>
+</ul>
+<br>
+<b>Valid variable names:</b><br>
+<p><code><pre>
+ int a;
+ int _ab;
+ int a30;
+</pre></code></p>
+<br> 
+<b>Invalid variable names:</b>
+<p><code><pre>
+  int 2;
+  int a b;
+  int long;
+</pre></code></p>
+<br> 
+ <div>
+ <h3>Types of Variables in C</h3>
+ <p>There are many types of variables in c:</p>
+ <ol type="1">
+ <li>local variable</li>
+ <li>global variable</li>
+ <li>static variable</li>
+ <li>automatic variable</li>
+ <li>external variable</li>
+ </ol>
+ </div>
+ <div>
+ <b>Local Variable</b><br>
+ <p>A variable that is declared inside the function or block is called a local variable.It must be declared at the 
+   start of the block.<br></p>
+ <b>Syntax:</b>
+ <p><code><pre> 
+   void function1()
+   {
+    int x=10;             //local variable  
+   }  
+ </pre></code></p>
+ <p>You must have to initialize the local variable before it is used.<br></p>
+ <br>
+ <b>Global Variable</b><br>
+ <p>A variable that is declared outside the function or block is called a global variable. Any function can change the value of the global
+  variable. It is available to all the functions.</p>It must be declared at the start of the block.<br>
+ <b>Syntax:</b>
+ <p><code><pre>
+  int value=20;         //global variable
+  void function1()
+  {
+   int x=10;//local variable
+  }
+</pre></code></p>
+ <br>
+ <b>Static Variable</b><br>
+ <p>A variable that is declared with the static keyword is called static variable.It retains
+  its value between multiple function calls.<br></p>
+ <b>Syntax:</b>
+ <p><code><pre>
+  void function1()
+  {
+   int x=10;             //local variable 
+   static int y=10;      //static variable
+   x=x+1;
+   y=y+1; 
+   printf("%d,%d",x,y);
+  }
+ </pre></code></p>
+ <p>If you call this function many times, the local variable will print the same value for each function call,
+   e.g, 11,11,11 and so on. But the static variable will print the incremented value in each function call,
+   e.g. 11, 12, 13 and so on.</p>
+ <br>
+ <b>Automatic Variable</b><br>
+ <p>All variables in C that are declared inside the block, are automatic variables by default. We can explicitly
+ declare an automatic variable using auto keyword.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+  void main()
+  {
+   int x=10;          //local variable (also automatic)
+   auto int y=20;     //automatic variable  <br>
+  }
+ </pre></code></p>
+ <br>
+ <b>External Variable</b><br>
+ <p>We can share a variable in multiple C source files by using an external variable. To declare an external variable,
+  you need to use extern keyword.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+   extern int x=10;        //external variable (also global)
+ </pre></code></p>
+ <br>
+ </div>
+</div>
+
+<!--TYPE CASTING-->
+<div class="content">
+<h1 id="typecasting" style="font-family:times new roman;" align="center">C TYPE CASTING</h1>
+<p>Type Casting is a mechanism in c programming language which enables a variable of one datatype to be converted to an
+  other datatype.When a variable is typecasted into a different type, the compiler basically treats the variable as of
+  the new data type.</p>
+<h3>Type of casting</h3>
+ <ul><li>implicit or automatic</li>
+  <li>explicit or given</li></ul>
+<br>
+ <h4>implicit or automatic</h4>
+ <p>In implicit or automatic casting compiler will automatically change one type of data into another. For instance, if
+  you assign an integer value to a floating-point variable, the compiler will insert code to convert the int to a float.</p>
+ <b>Example:</b>
+ <p><code><pre>
+    short a=2000;
+    int b;
+    b=a;
+ </pre></code></p>
+ <p>Here value of 'a' has been promoted from short to int and we have not had to specify any type-casting operator.
+  implicit conversions affect fundamental data types. Typecasting should always be used in right order (low to higher
+  datatype).Typecasting in wrong places may result in loss of precision, which the compiler can signal with a warning.
+  for example like for instance truncating a float when typecasting to an int.This can be avoided with an explicit
+  conversion. Below is the right order for numerical conversion.</p><br>
+ <p>short int -> int -> unsigned int ->long int -> unsigned long int -> float -> double -> long double</p>
+ <h4>explicit or given</h4>
+ <p>Casting allows you to make this type conversion explicit, or to force it when it wouldn’t normally happen.To perform
+  type casting, put the desired type including modifiers (like double) inside parentheses to the left of the variable
+  or constant you want to cast.</p>
+ <b>Example:</b>
+ <p><code><pre>
+   float a = 5.25;
+   int b = (int)a;  /*Explicit casting from float to int. The value of b here is 5*/
+ </pre></code></p>
+ <p><b>type casting from char to int results in ASCII code –</b></p>
+ <p><code><pre>
+   char c = ’A’;   
+   int x = (int)c;  /*Explicit casting from char to int. The value of x here is 65: the ASCII code of ‘A’*/
+ </pre></code></p>
+ <p><b>Without Type Casting:</b></p>
+ <p><code><pre>
+   #include &lt;stdio.h&gt;
+   void main ()
+   {
+      int a;
+      a = 15/6;
+      printf("%d",a);
+   }
+ </pre></code></p>
+ <h4>OUTPUT:</h4>
+ <div id="ifelse">2</div>
+ <p><b>With Type Casting:</b></p>
+ <p><code><pre>
+  #include &lt;stdio.h&gt;
+  void main ()
+  {
+    float a;
+    a = (float) 15/6;
+    printf("%f",a);
+  }
+ </pre></code></p>
+ <h4>OUTPUT:</h4>
+ <div id="ifelse">2.50000000</div>
+</div>
+
+<!--PROGRAM STRUCTURE-->
+<div class="content">
+<h1 id="pstructure" style="font-family:times new roman;" align="center">C PROGRAM STRUCTURE</h1>
+<p>This lesson has detailed description of C program structure. It's essential for you before proceeding
+ to learn more advanced lessons of C programming<br>A C program involves the following sections:
+ <ul><li>Documentations (Documentation Section)</li>
+ <li>Preprocessor Statements (Link Section)</li>
+ <li>Global Declarations (Definition Section)</li>
+ <li>The main() function</li>
+     <ul><li>Local Declarations</li>
+       <li>Program Statements & Expressions</li></ul>
+ <li>User Defined Functions</li>
+ </ul>
+<h4>Let's look into various parts of the above C program</h4><br>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<td align="center" height="50" width="150">/* Comments */</td>
+<td align="left" height="50" width="800">Comments are a way of explaining what makes a program. The compiler ignores comments and used by others to understand the code.
+<br>or
+<br>
+This is a comment block, which is ignored by the compiler. Comment can be used anywhere in the program to add info about the program or code block, which will be helpful for developers to understand the existing code in the future easily.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="150">#include<stdio.h></td>
+<td align="left" height="50" width="800">stdio is standard for input/output, this allows us to use some commands which includes a file called stdio.h.
+<br>
+or
+<br>
+This is a preprocessor command. That notifies the compiler to include the header file stdio.h in the program before compiling the source-code.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="150">int/void main()</td>
+<td align="left" height="50" width="800">int/void is a return value, which will be explained in a while.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="150">main()</td>
+<td align="left" height="50" width="800">The main() is the main function where program execution begins. Every C program must contain only one main function.
+<br>or
+<br>
+This is the main function, which is the default entry point for every C program and the void in front of it indicates that it does not return a value.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="150">Braces</td>
+<td align="left" height="50" width="800">Two curly brackets "{...}" are used to group all statements.
+<br>or
+<br>
+Curly braces which shows how much the main() function has its scope.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="150">printf()</td>
+<td align="left" height="50" width="800">It is a function in C, which prints text on the screen.
+<br>or
+<br>
+This is another pre-defined function of C which is used to be displayed text string in the screen.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="150">return 0</td>
+<td align="left" height="50" width="800">At the end of the main function returns value 0.</td>
+</tr>
+</table>
+<br><br>
+ <div>
+ <ol type="A">
+ <h3><li>Documentation Block</li></h3>
+ <p>Documentation block is the header of any c program structure which is mainly consist of set of comments,that is
+   used to provide the information about the program written like name of a program, utility of program, date of
+   creation, date of last modification ,author name, licensing or copyrights information and any other information that
+   programmer wish to put for the references.</p>
+ <b>Example:</b>
+ <p><code><pre>
+    //Program Name: First Program
+    /*
+    Version: 1.0
+    Description: C program basic program structure.
+    Author: @noname
+    Date Created:21-02-2013
+    */
+ </pre></code></p>
+ <h3><li>Preprocessor Statement</li></h3>
+ <p>This is the section where we define all the preprocessor directive, preprocessor statement begins with # symbol.
+   Preprocessor statements tells the compiler to include C preprocessors directives such as header files and constants
+   prior to compilation of the C program. Preprocessor statements are further categories as below
+
+  <ol><li><strong>Link Preprocessor-</strong> These preprocessor directive tell the compiler to link the functions from
+     system library.</li>
+    <b>Example:</b>
+    <p><code><pre>
+       #include &lt;stdio.h&gt;
+       #include &lt;conio.h&gt;
+    </pre></code></p>
+   <li><strong>Definition Preprocessor–</strong> This the section where we define all our symbolic constant we gonna
+     use in our program.</li>
+   <b>Example:</b>
+   <p><code><pre>
+     #define pi 3.142
+     #define TRUE 1
+     #define FALSE 0
+   </pre></code></p>
+  </ol>
+ <h3><li>Global Declarations</li></h3>
+ <p>This is the section where all the global variable and function declaration comes. All the variables and function
+   defined or declared outside the main function are treated as global.</p>
+ <h3><li>The main() Function</li></h3>
+ <p>This is the most vital part of any each and every C program, it is mandatory for C program to have only one main().
+   The C program execution starts with main() function. C program can not be executed without the main function.It
+   is illegal to terminate it by semicolon. The main() is building block where all the logic of the program comes
+   into the picture.The main() is responsible for the execution of all the user defined statement, functions and
+   library functions. The main() function further structured into – Local variable declaration, function declaration
+   and user defined executable statements.</p>
+ <h3><li>Local Declaration</li></h3>
+ <p>n this section we declare all the variable that will be used in main ( ) function.Here we can also declare arrays,
+   functions, pointers etc. These variables can also be initialized with basic data types and initial values.
+  For example
+ <p><code><pre>
+   main ( )
+  {
+     int sum = 0;  int a;  float b;
+  }
+ </pre></code></p>
+ </p>
+ <ul type="square"><li>All the local variable declaration is done in variable declaration section.</li>
+  <li>main ( ) function can further have the declaration for user defined functions.</li>
+  <li>All the user defined function’s definition appears immediately after the main function.</li></ul>
+ <h3><li>Program statements</li></h3>
+ <p>This is the section where we place our main logic of the program which included the executable statements, that
+   tell the computer to perform a specification action.Program statement can be an input-output statements,
+   arithmetic statements, control statements, simple assignment statements and any other statements and it also includes
+   comments that are enclosed within /* and */ . The comment statements are ignored during the compilation and execution
+   of the program and each executable statement must be ended with semicolon.</p>
+ <ul type="square"><li>main() function should contain atleast one executable statement.</li>
+   <li>All statements in the declaration and executable parts end with a semicolon.</li></ul>
+ <h3><li>User defined functions</li></h3>
+ <p>This is the section of C Program where we put all the user defined sub-program or custom functions created to perform a
+   specific task. A user defined function must be defined before use it. User defined function can written before or
+   immediately after the main() function and called inside the main() function.</p>
+ </ol>
+ </div>
+</div>
+
+<!--INPUT AND OUTPUT-->
+<div class="content">
+<h1 id="inou" style="font-family:times new roman;" align="center">C INPUT AND OUTPUT(I/O)</h1>
+<p>As we all know the three essential functions of a computer are reading, processing and writing data. Majority of the
+  programs take data as input, and then after processing the processed data is being displayed which is called
+  information. In C programming you can use scanf() and printf() predefined function to read and print data.</p>
+<b>Example:</b>
+<p><code><pre>
+  #include&lt;stdio.h&gt;
+
+  void main()
+ {
+   int a,b,c;
+   printf("Please enter any two numbers: \n");
+   scanf("%d %d", &a, &b);
+   c =  a + b;
+   printf("The addition of two number is: %d", c);
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">Please enter any two numbers:<br>12<br> 3<br>The addition of two number is:15</div>
+<p>The above program scanf() is used to take input from the user, and respectively printf() is used to display output
+  result on the screen.</p>
+<br>
+ <div>
+ <ol type="A">
+ <h3><li>Managing i/p and o/p</li></h3>
+ <p>I/O operations are useful for a program to interact with users. stdlib is the standard C library for input-output
+   operations. While dealing with input-output operations in C, two important streams play their role. These are:
+  <ol><li>Standard Input (stdin)</li>
+     <li>Standard Output (stdout)</li></ol>
+ <p><strong>Standard input</strong> or <strong>stdin</strong> is used for taking input from devices such as the keyboard
+  as a data stream. <strong>Standard output</strong> or <strong>stdout</strong> is used for giving output to a device 
+  such as a monitor. For using I/O functionality, programmers must include stdio header-file within the program.</p>
+ 
+ <h3><li>Reading Character in C</li></h3>
+ <p>The easiest and simplest of all I/O operations are taking a character as input by reading that character from
+  standard input (keyboard).<strong> getchar()</strong> function can be used to read a single character. This function is alternate to
+  <strong>scanf()</strong> function.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+   var_name = getchar();
+ </pre></code></p>
+ <b>Example:</b>
+ <p><code><pre>
+   #include&lt;stdio.h&gt;
+
+   void main()
+  {
+    char title;
+    title = getchar();
+  }
+ </pre></code></p>
+ <p>There is another function to do that task for files: <strong>getc</strong> which is used to accept a character
+   from standard input.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+    int getc(FILE *stream);
+ </pre></code></p>
+
+ <h3><li>Writing Character in C</li></h3>
+ <p>Similar to <strong>getchar()</strong> there is another function which is used to write characters, but one at a time.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+    putchar(var_name);
+ </pre></code></p>
+ <b>Example:</b>
+ <p><code><pre>
+    #include&lt;stdio.h&gt;
+
+    void main()
+    {
+      char result = 'P';
+      putchar(result);
+      putchar('\n');
+    }
+ </pre></code></p>
+ <p>Similarly, there is another function <strong>putc</strong> which is used for sending a single character to the standard output.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+     int putc(int c, FILE *stream);
+ </pre></code></p>
+
+ <h3><li>Formatted Input</li></h3>
+ <p>It refers to an input data which has been arranged in a specific format. This is possible in C using scanf().
+   We have already encountered this and familiar with this function.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+   scanf("control string", arg1, arg2, ..., argn);
+ </pre></code></p>
+ <p>The field specification for reading integer inputted number is:</p>
+ <p><code><pre>
+      %w sd
+ </pre></code></p>
+ <p>Here the % sign denotes the conversion specification; w signifies the integer number that defines the field width
+    of the number to be read. d defines the number to be read in integer format.</p>
+ <b>Example:</b>
+ <p><code><pre>
+    #include&lt;stdio.h&gt;
+
+    void main()
+    {
+      int var1= 60;
+      int var2= 1234;
+      scanf("%2d %5d", &var1, &var2);
+    }
+ </pre></code></p>
+ <p>Input data items should have to be separated by spaces, tabs or new-line and the punctuation marks are not counted
+    as separators.</p>
+
+ <h3><li>Reading and Writing Strings in C</li></h3>
+ <p>There are two popular library functions gets() and puts() provides to deal with strings in C.
+ <strong>gets:</strong> The char *gets(char *str) reads a line from <strong>stdin</strong> and keeps the string pointed
+   to by the <strong>str</strong> and is terminated when the new line is read or <strong>EOF</strong> is reached. The
+   declaration of gets() function is:</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+   char *gets(char *str);
+ </pre></code></p>
+ <p>where str is a pointer to an array of characters where C strings are stored.</p>
+ <p><strong>puts:</strong> The function - int puts(const char *str) is used to write a string to <strong>stdout</strong>,
+   but it does not include null characters. A new line character needs to be appended to the output. The declaration is:</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+   int puts(const char *str)
+ </pre></code></p>
+ <p>where str is the string to be written in C.</p>
+ </ol>
+ </div>
+</div>
+
+
+<!--IF STATEMENTS-->
+<div class="content">
+<h1 id="ifstatement" style="font-family:times new roman;" align="center">C IF STATEMENTS</h1>
+<p><strong>if statements</strong> in C is used to control the program flow based on some condition, it's used to execute some statement code block
+ if the expression is evaluated to true. Otherwise, it will get skipped. This is the simplest way to modify the control flow of the program.
+ The if statement in C can be used in various forms depending on the situation and complexity.<br>
+There are four different types of if statement in C. These are:
+<ul>
+<li>Simple if Statement</li>
+<li>if-else Statement</li>
+<li>Nested if-else Statement</li>
+<li>else-if Ladder</li>
+</ul></p>
+<br>
+<p>The basic format of if statement is:</p>
+<b>Syntax:</b><br>
+<p><code><pre>
+ if(test_expression)
+ {
+   statement 1;
+   statement 2;
+   ...
+ }
+</pre></code></p>
+<p>'Statement n' can be a statement or a set of statements, and if the test expression is evaluated to true, the 
+ statement block will get executed, or it will get skipped.</p><br><br>
+<p>Figure - Flowchart of if-else Statement:<br>
+<img src="https://static.studytonight.com/java/images/if-block.JPG" alt="blank image"></img><br>
+</p>
+<b>Example of C program to demonstrate of if statement:</b><br>
+<mark><b>Example 1:</b></mark>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+ void main()
+ {
+   int a = 15, b = 20;
+
+   if (b > a) 
+   {  
+    printf("b is greater");
+   }
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+<div id="ifelse">b is greater<br></div><br>
+<mark><b>Example 2:</b></mark>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+
+ void main()
+ {
+  int number;
+  printf("Type a number:");
+  scanf("%d", &number);
+
+  if (number < 0) 
+  {   
+     number = -number;                  // check whether the number is negative number.
+                                       // If it is a negative then convert it into positive.
+    printf("The absolute value is %d\n", number);
+  }
+ } 
+</pre></code></p>
+<h4>OUTPUT:</h4>
+<div id="ifelse">Type a number: -18<br>The absolute value is 18.<br><br></div>
+</div>
+
+<!--IF ELSE STATEMENT-->
+<div class="content">
+<h1 id="ifestatement" style="font-family:times new roman;" align="center">C IF-ELSE STATEMENTS</h1>
+<p>If else statements in C is also used to control the program flow based on some condition, only the difference
+ is: it's used to execute some statement code block if the expression is evaluated to true, otherwise executes
+ else statement code block. In short,<strong>if else</strong> statement is used to perform an action if a single
+ condition is true and to perform another action if that condition is false.</p><br>
+The basic format of if else statement is:<br>
+<b>Syntax:</b><br>
+<p><code><pre>
+ if(test_expression)
+ {
+   //execute your code
+ }
+ else
+ {
+   //execute your code
+ }
+</pre></code></p>
+<p>Figure - Flowchart of if-else Statement:<br>
+<img src="http://www.zentut.com/wp-content/uploads/2007/12/c-if-else-statement.png" alt="blank image"></img><br>
+ <div>
+ <b>Example of a C program to demonstrate if-else statement</b><br>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+
+  void main()
+  {
+    int a, b;
+
+    printf("Please enter the value for a:");
+    scanf("%d", &a);
+    printf("\nPlease enter the value for b:");
+    scanf("%d", &b);
+  
+   if (a > b) 
+    {  
+     printf("\n a is greater");
+    } else 
+    {  
+    printf("\n b is greater");
+    }
+  }
+ </pre></code></p>
+ </div>
+ <h4>OUTPUT:</h4>
+ <div id="ifelse">
+  Please enter the value for a:18<br>
+  Please enter the value for b:7<br>
+  a is greater</div>
+</div>
+
+<!--NESTED IF ELSE STATEMENT-->
+<div class="content">
+<h1 id="neifestatement" style="font-family:times new roman;" align="center">C NESTED IF-ELSE STATEMENTS</h1>
+<p>Nested if else statements play an important role in C programming, it means you can use conditional statements 
+ inside another conditional statement.<br>
+The basic format of Nested if else statement is:<br>
+<b>Syntax:</b>
+<p><code><pre>
+ if(test_expression one)
+ {
+   if(test_expression two) 
+   {
+      //Statement block Executes when the boolean test expression two is true.
+   }
+ }
+ else
+ {
+    //else statement block
+ }
+</pre></code></p>
+ <div>
+ <b>Example of a C program to demonstrate nested if-else:</b><br>
+ <p><code><pre>
+ #include&lt;stdio.h&gt;
+ void main()
+ {
+  int sum = 200;
+  if (sum <200)
+   printf ("You Lose!");
+  else if (sum = 200)
+   printf ("Match Draw!");
+  else
+   printf ("You Won!");
+ }
+ </pre></code></p>
+ </div>
+ <h4>OUTPUT:</h4>
+ <div id="ifelse">Match Draw!</div>
+</div>
+
+<!--ELSE IF STATEMENT-->
+<div class="content">
+<h1 id="eifstatement" style="font-family:times new roman;" align="center">C ELSE-IF STATEMENT</h1>
+<p>else-if statements in C is like another if condition, it's used in a program when if statement having multiple
+ decisions.</p><br>
+<p>The basic format of else if statement is</p><br>
+<b>Syntax: </b>
+<p><code><pre>
+  if(test_expression)
+   {
+     //execute your code
+   }
+  else if(test_expression n)
+   {
+     //execute your code
+   }
+  else
+   {
+     //execute your code
+   }
+</pre></code></p>
+ <b>Example of C program to demonstrate else-if statement:</b>
+ <p><code><pre>
+    #include&lt;stdio.h&gt;
+    void main()
+    {
+      int a, b;
+      printf("Please enter the value for a:");
+      scanf("%d", &a);
+      printf("\nPlease enter the value for b:");
+      scanf("%d", &b);
+
+      if (a > b)
+       {
+         printf("\n a is greater than b");
+       }
+      else if (b > a)
+       {
+         printf("\n b is greater than a");
+       }
+      else
+       {
+         printf("\n Both are equal");
+       }
+    }
+ </pre></code></p>
+ <h4>OUTPUT:</h4>
+ <div id="ifelse">Please enter the value for a:18<br>
+ Please enter the value of b:18<br>
+ Both are equal</div>
+</div>
+
+<!--GOTO STATEMENT-->
+<div class="content">
+<h1 id="gotostatement" style="font-family:times new roman;" align="center">C GOTO STATEMENT</h1>
+<p>So far we have discussed the if statements and how it is used in C to control statement execution based
+ on some decisions or conditions. The flow of execution also depends on other statements which are not based on
+ conditions that can control the flow.<br>
+
+ C supports a unique form of a statement that is the goto Statement which is used to branch unconditionally within
+ a program from one point to another. Although it is not a good habit to use the goto statement in C, there may be
+ some situations where the use of the goto statement might be desirable.<br>
+
+ The goto statement is used by programmers to change the sequence of execution of a C program by shifting the 
+ control to a different part of the same program.<br>
+
+The general form of the goto statement is:<br>
+
+<b>Syntax:</b><br>
+<p><code><pre>
+ goto label;
+</pre></code></p>
+
+<p>A label is an identifier required for goto statement to a place where the branch is to be made. A label is a
+ valid variable name which is followed by a colon and is put immediately before the statement where the control
+ needs to be jumped/transferred unconditionally.<br>
+<b>Syntax:</b>
+<p><code><pre>
+goto label;
+ - - -- -   -
+ - - - - - - - -
+label:
+
+statement - X;
+/*This the forward jump of goto statement */
+</pre></code></p>
+<p>or</p>
+<p><code><pre>
+label:
+ - - -- -   -
+ - - - - - - - -
+
+goto label;
+
+/*This is the backward jump of goto statement */
+
+</pre></code></p>
+<b>Example of C program to demonstrate goto Statement:</b>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+ void main()
+ {
+  int i,n;
+  printf ("Enter a number: ");
+  scanf ("%d",&n);
+  less:
+   printf ("less than 5");
+ 
+  if (i < 5)
+  goto less;
+  else
+  {
+   printf ("%d", i);
+  }
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">Enter a number:3<br>less than 5</div>
+</div>
+
+<!--SWITCH STATEMENT-->
+<div class="content">
+<h1 id="switchstatement" style="font-family:times new roman;" align="center">C SWITCH STATEMENT</h1>
+ <p>C switch statement is used when you have multiple possibilities for the if statement. Switch case will allow
+  you to choose from multiple options. When we compare it to a general electric switchboard, you will have many
+  switches in the switchboard but you will only select the required switch, similarly, the switch case allows you to
+  set the necessary statements for the user.<br></p>
+ 
+ <p>The basic format of the switch statement is:<br></p>
+ <b>Syntax:</b>
+
+ <p><code><pre>
+  switch(variable)
+  {
+    case 1:
+     //execute your code
+    break;
+    case n:
+    //execute your code<br>
+    break;
+    default:
+    //execute your code<br>
+    break;
+  }
+ </pre></code></p>
+ <p>After the end of each block it is necessary to insert a break statement because if the programmers do not use
+ the break statement, all consecutive blocks of codes will get executed from every case onwards after matching the
+ case block.<br></p>
+ <b>Example of a C program to demonstrate Switch statement</b><br>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  void main()
+  {
+    int a;
+    printf("Please enter a no between 1 and 5: ");
+    scanf("%d",&a);
+    
+    switch(a)
+    {
+    case 1:
+    printf("You chose One");
+    break;
+    
+    case 2:
+    printf("You chose Two");
+    break;
+
+    case 3:
+    printf("You chose Three");
+    break;
+
+    case 4:
+    printf("You chose Four");
+    break;
+
+    case 5:
+    printf("You chose Five.");
+    break;
+
+    default :
+    printf("Invalid Choice. Enter a no between 1 and 5");
+    break;
+    }
+
+  }
+ </pre></code></p>
+ <p><b>Note:</b>When none of the cases is evaluated to true, the default case will be executed, and break statement
+ is not required for default statement.</p>
+ <h4>OUTPUT:</h4>
+ <div id="ifelse">Please enter a no between 1 and 5:18<br>Invalid Choice. Enter a no between 1 and 5.</div>
+</div>
+
+<!--LOOPS-->
+<div class="content">
+<h1 id="loop" style="font-family:times new roman;" align="center">C LOOPS</h1>
+<p>Sometimes it is necessary for the program to execute the statement several times. A loop executes a block<br> of commands a specified number of times
+ until a condition is met. In this tutorial,you will learn about all the looping statements of C programming along with their use.<br>
+<b>What is a Loop?</b><br>A computer is the most suitable machine for performing repetitive tasks,and it can perform a task
+ thousands of times. Every programming language has the feature to instruct to do such repetitive tasks with the help of certain
+ statements. The process of repeatedly executing a collection of statements is called looping. The statements<br> get executed many numbers of times
+ based on the condition. But if the condition is given in such logic that the repetition continues any number of times with no fixed condition 
+ to stop looping those statements, then this type of looping is called infinite looping.<br>
+ <div>
+ C supports the following types of loops:<br>
+ <ul>
+ <li>while loops</li>
+ <li>do-while loops</li>
+ <li>for loops</li>
+ </ul>
+ <br>
+ </div>
+ <div>
+ All are slightly different and provide loops for different situations.
+ <br>
+ </div>
+ <div>
+ <b> C Loop Control Statements</b><br>
+ Loop control statements are used to change the normal sequence of execution of the loop.<br>
+ </p><table border="1" cellspacing="0" align="center">
+ <tr>
+ <th align="center" height="50" width="100" rowspan="1">Statement</th>
+ <th align="center" height="50" width="300" rowspan="1">Syntax</th>
+ <th align="center" height="50" width="800" rowspan="1">Description</th>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="100">break statement</td>
+ <td align="center" height="50" width="300">break;</td>
+ <td align="center" height="50" width="800">It is used to terminate loops or switch statements.</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="100">continue statement</td>
+ <td align="center" height="50" width="300">continue;</td>
+ <td align="center" height="50" width="800">It is used to suspend the current loop iteration and transfer control to the loop for the next iteration.</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="100">goto statement</td>
+ <td align="center" height="50" width="300">goto labelName;<br>
+ labelName: statement;</td>
+ <td align="center" height="50" width="800">It transfers the current program execution sequence to some other part of the program.</td>
+ </tr>
+ </table>
+ </div>
+</div>
+<br>
+
+<!--WHILE LOOP-->
+<div class="content">
+<h1 id="wloop" style="font-family:times new roman;" align="center">C WHILE LOOPS</h1>
+<p>It transfers the current program execution sequence to some other part of the program.<br>
+ <strong>while loop</strong> is a most basic loop in C programming. It has one control condition, and executes 
+ as long the condition is true.  The condition of the loop is tested before the body of the loop is executed, 
+ hence it is called an <b>entry-controlled loop</b>.<br>
+ <div>
+ The basic format of while loop statement is:<br>
+ <b>syntax:</b>
+ <p><code><pre>
+ while (condition)
+ {
+   statement(s);
+   Incrementation;
+ }<br>
+ </pre></code></p>
+ <p>Figure - Flowchart of while loop:</p><br>
+ <img src="https://i.pinimg.com/474x/2c/6c/8a/2c6c8a0fb55e61fa2dbe2b878f361abd.jpg" alt="blank"></img><br>
+ <h3>Nested While Loop:</h3>
+ <p>Nested While loop is While loop inside a while loop and so on which is used to run multiple loop conditions.<br></p>
+ <b>Syntax:</b><br>
+ <p><code><pre>
+ while(condition)
+ {
+  while(condition)
+  {
+   code to be executed if the condition is true;
+  }
+ }<br>
+ </pre></code></p>
+ <h3>Infinitive While Loop:</h3>
+ <p>Infinitive While loop is a while loop with condition 1 and thus running for infinite number of times.<br></p>
+ <b>Syntax:</b><br>
+ <p><code><pre>
+  while(1)
+ {
+  code to be executed;
+ }<br>
+ </pre></code></p>
+ </div>
+ 
+ <b>Example of a C program to Demonstrate while loop:</b><br>
+ <p><code><pre>
+ #include&lt;stdio.h&gt;
+ 
+int main ()
+{
+   int n = 1,times=5;               /* local variable Initialization */ 
+
+   while( n <= times )             /* while loops execution */   
+   {
+      printf("C while loops: %d\n", n);
+      n++;
+   }
+ 
+   return 0;
+}
+ </pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">C while loops: 1<br>C while loops: 2<br>C while loops: 3<br>C while loops: 4<br>C while loops: 5<br>
+ </div>
+</div>
+
+<!--FOR LOOP-->
+<div class="content">
+<h1 id="floop" style="font-family:times new roman;" align="center">C FOR LOOP</h1>
+<p>C For Loop is a loop statement which can be used in various forms to execute a block of code continuously
+ as long as the condition of the loop is true, and stops only when the condition fails. C for loops is very similar
+ to a while loops in that it continues to process a block of code until a statement becomes false, and everything
+ is defined in a single line. The for loop is also <strong>entry-controlled</strong> loop.For loop is used to execute
+ a group of action only for a specified number of times.</p><br>
+<b>Syntax:</b><br>
+<p><code><pre>
+ for(initialization; condition; increment/decrement)
+ {
+   code to be executed till the condition is true;
+ }
+</pre></code></p>
+<br>
+<p>Nested For loop is For loop inside a For loop and so on which is used to run multiple loop conditions.</p>
+<b>Syntax:</b><br>
+<p><code><pre>
+  for(initialization; condition; increment/decrement)
+  {
+   for(initialization; condition; increment/decrement)
+    {
+
+      code to be executed till the condition is true;
+    }
+  }
+</pre></code></p>
+<p>Figure - Flowchart of while loop:</p><br>
+ <img src="https://cdn.techbeamers.com/wp-content/uploads/2019/01/C-For-Loop-Flowchart.jpeg" alt="blank"></img><br>
+<b>Example of C program to demonstrate for loop:</b>
+<p><b><mark>Example 1:</mark>For loop</b></p>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+ void main()
+ {
+  int i;
+  for (i = 0; i <= 10; i++)
+  {
+   printf ("%d", i);
+   printf ("\n");
+  }
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+<div id="ifelse">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
+<br>
+<p><b><mark>Example 2:</mark>Nested for loop</b></p>
+<p><code><pre>
+  #include&lt;stdio.h&gt;
+  void main()
+  {
+   int i,j;
+ 
+   for (i = 1; i <= 10; i++)
+   {
+    printf ("%d", i);
+    printf ("\n");
+    for (j = 1; j <= i; j++)
+     {
+      printf ("%d", j);
+     }
+    printf ("\n");
+   }
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">1<br>2<br>12<br>3<br>123<br>4<br>1234<br>5<br>12345<br>6<br>123456<br>7<br>1234567<br>8<br>12345678<br>
+ 9<br>123456789<br>10<br>12345678910<br></div>
+</div>
+
+<!--DO WHILE LOOP-->
+<div class="content">
+<h1 id="dwloop" style="font-family:times new roman;" align="center">C DO-WHILE LOOP</h1>
+<p>C do while loops are very similar to the while loops, but it always executes the code block atleast
+ once and furthermore as long as the condition remains true. This is an <strong>exit-controlled</strong> loop.
+ C do-while Loop is a loop statement which is used to execute a block of code continuously as long as the condition
+ of the loop is true, and stops only when the condition fails like other loop statements.<br><br>
+ The basic format of do while loop statement is:<br>
+ <b>Syntax:</b><br>
+ </p>
+ <p><code><pre>
+  do
+   {
+     statement(s);
+   }while( condition );
+ </pre></code></p>
+<p>Figure - Flowchart of while loop:</p><br>
+ <img src="https://www.journaldev.com/wp-content/uploads/2017/10/java-do-while-loop-1.png" alt="blank"></img><br>
+<b>Example of C programing to demonstrate do-while loop:</b>
+ <p><b><mark>EXAMPLE 1</mark>:When while condition is True</b></p>
+ <p><code><pre>
+  #inclue&lt;stdio.h&gt;
+  void main()
+  {
+   int i = 1;
+   do
+   {
+    printf ("%d", i);
+    i++;
+   }
+   while (i <= 10);
+  }
+ </pre></code></p>
+ <h4>OUTPUT:</h4><br>
+ <div id="ifelse">12345678910</div>
+ <p><b><mark>EXAMPLE 2</mark>:When while condition is False</b></p>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  void main()
+  {
+    int i = 11; 
+    do
+    {
+     printf ("%d", i);
+     i++;
+    }
+    while (i <= 10);
+  }
+ </pre></code></p>
+ <h4>OUTPUT:</h4>
+ <div id="ifelse">11</div>
+</div>
+
+<!--FUNCTIONS-->
+<div class="content">
+<h1 id="function" style="font-family:times new roman;" align="center">C FUNCTIONS</h1>
+<p>As we know C Programming Language is function oriented programming language, functions are one of the key building
+  block of any c program. Function is way to wrap up the set of statements to perform the specific task and give it a
+  name, so that it can be invoked from any where in the program.<br>Function in C Programming language give us a way to
+  divide the complete program into subunits that perform a specific task for that program, this way it enhance the
+  modular approach and increase the re usability of the program.<br>
+  We pass information in function call as its parameter and the function can either returns some value to the point it
+  where it called from or returns nothing.</p>
+<h3>Advantages of Function</h3>
+<ul type="circle"><li>It enhance the modularity of the program.</li>
+  <li>It enhance the re usability.</li>
+  <li>It makes development easy as development can be shared in team.</li>
+  <li>It reduces the coupling.</li>
+  <li>It reduces duplication.</li>
+</ul>
+<br>
+<h3>Type Of Function</h3>
+<ul type="square"><li>Built in function</li>
+  <li>User defined functions</li>
+</ul>
+ <h4>Built In Function In C</h4>
+ <p>Built in functions are the functions available in C Programming Language to perform some common and standard tasks,
+  this functions are available as C library. These libraries includes the functions for file access, mathematical
+  computations, graphics, memory management etc.<br>
+  A built in function can be accessed simply by including the relative header file and at point of function call by
+  just writing the function name, followed by an optional list of arguments.<br>
+ The system provided these functions and stored in the library. Therefore it is also called <strong>Library Functions
+ </strong>.e.g. <strong>scanf(), printf(), strcpy, strlwr, strcmp, strlen, strcat</strong> etc.To use these functions,
+ you just need to include the appropriate C header files</p>
+ <h4>User defined functions In C</h4>
+ <p>User defined function are custom function defined by user it self to perform as custom task that is not available
+  as built in, in this way user can define and write subprograms as functions to perform a task relevant to their
+  programs.These functions are defined by the user at the time of writing the program.</p>
+<br>
+ <div>
+ <h3>Function Type Based on Structure of Function</h3>
+ <ol type="a"><li>Functions with no arguments and no return value.</li>
+  <li>Functions with arguments but no return value.</li>
+  <li>Function with no arguments but with return value.</li>
+  <li>Functions with arguments and with return value.</li>
+ </ol>
+ <ol type="A">
+ <h4><li>Functions with No Arguments and No Return Value in C</li></h4>
+ <b>Syntax:</b>
+ <p><code><pre>
+   function_name ()
+   {
+    Function Body
+   }
+ </pre></code></p>
+ <h4><li>Functions with Arguments and No Return Value in C</li></h4>
+ <b>Syntax:</b>
+ <p><code><pre>
+   function_name(parameter list)
+   {
+    Function Body
+   }
+ </pre></code></p>
+ <h4><li>Function with No Arguments but with Return Value in C</li></h4>
+ <b>Syntax:</b>
+ <p><code><p>
+   return_type  function_name()
+   {
+     Function Body
+     return statement;
+   }
+ </pre></code></p>
+ <h4><li>Functions with Arguments and with Return Value in C</li></h4>
+ <b>Syntax:</b>
+ <p><code><pre>
+   return_type  function_name(parameter list)
+   {
+     Function Body
+     return statement
+   }
+ </pre></code></p>
+ </ol>
+ </div>
+<br>
+ <div>
+ <h3>Structure of a Function</h3>
+ <p>There are two main parts of the function:<br> 1.The function header<br>  2.The function body.</p>
+ <h4>Function Header</h4>
+ <p>In the first line of the above code
+ <p><code><pre>
+    return_type  function_name(parameter list)
+ </pre></code></p>
+ It has three main parts:
+ <ol type="i"><li>The name of the function</li>
+   <li>The parameters of the function enclosed in parenthesis</li>
+   <li>Return value type</li></ol>
+<br>
+ <h4>Function Body</h4>
+ <p>Whatever is written with in { } in the above example is the body of the function.</p>
+ <b>Parts of Function</b>
+ <ol type="A"><li>Function Prototype (function declaration)</li>
+  <li>Function Definition</li>
+  <li>Function Call</li></ol>
+ <ol type="1"><b><li>Function Prototype</li></b>
+ <b>Syntax:</b>
+ <p><code><pre>
+    dataType functionName (Parameter List)
+ </pre></code></p>
+ <b>Example:</b>
+ <p><code><pre>
+   int addition();
+ </pre></code></p>
+ <b><li>Function Defination</li></b>
+ <b>Syntax:</b>
+ <p><code><pre>
+   returnType functionName(Function arguments)
+   {
+     //body of the function 
+   }
+ </pre></code></p>
+ <b>Example:</b>
+ <p><code><pre>
+   int addition()
+   {
+
+   }
+ </pre></code></p>
+ <b><li>Calling a Function</li></b>
+ <p>Example to illustrate the Addition of Two numbers Using User Defined Functions</p>
+ <p><code><pre>
+   #include&lt;stdio.h&gt;
+
+   /* function declaration */
+   int addition();
+
+   int main()
+   {   
+      //local variable definition
+      int answer;
+    
+      answer = addition(); //calling a function to get addition value.
+      printf("The addition of the two numbers is: %d\n",answer);
+      return 0;
+   }
+
+   //function returning the addition of two numbers
+   int addition()
+   {
+     int num1 = 10, num2 = 5; // local variable definition
+     return num1+num2;
+   }
+ </pre></code></p>
+ </ol>
+ <h4>OUTPUT:</h4>
+  <div id="ifelse">The addition of the two numbers is: 15</div>
+ </div>
+</div>
+
+<!--FUNCTION ARGUMENTS-->
+<div class="content">
+<h1 id="functionargument" style="font-family:times new roman;" align="center">C FUNCTION ARGUMENTS</h1>
+<p>While calling a function, the arguments can be passed to a function in two ways, Call by value and call by reference.</p><br>
+ <div>
+ <table border="1" cellspacing="0" align="center">
+ <tr>
+ <th align="center" height="50" width="300" rowspan="1">Type</th>
+ <th align="center" height="50" width="800" rowspan="1">Description</th>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="300">Call by Value</td>
+ <td align="left" height="50" width="800">
+ <ul>
+ <li>The actual parameter is passed to a function.</li>
+ <li>New memory area created for the passed parameters, can be used only within the function.</li>
+ <li>The actual parameters cannot be modified here.</li>
+ </td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="300">Call by Reference</td>
+ <td align="left" height="50" width="800">
+ <ul>
+ <li>Instead of copying variable; an address is passed to function as parameters.</li>
+ <li>Address operator(&) is used in the parameter of the called function.</li>
+ <li>Changes in function reflect the change of the original variables.</li>
+ </td>
+ </tr>
+ </table>
+ </div><br>
+<h3>Call by Value</h3>
+ <b>Example of C program to demonstrate Call by Value:</b>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  //function declaration
+  int addition(int num1, int num2);
+
+  int main()
+  {
+    //local variable definition
+    int answer;
+    int num1 = 10;
+    int num2 = 5;
+    
+    //calling a function to get addition value
+    answer = addition(num1,num2);
+    
+    printf("The addition of two numbers is: %d\n",answer);
+    return 0;
+  }
+
+ //function returning the addition of two numbers
+ int addition(int a,int b)
+ {
+    return a + b;
+ }</pre></code></p>
+<h4>OUTPUT:</h4>
+<div id="ifelse">The addition of two numbers is: 15</div><br><br>
+<h3>Call by Reference</h3>
+<b>Example of C program to demonstrate Call by Reference:</b></p>
+<p><code><pre>
+  #include&lt;stdio.h&gt;
+
+  //function declaration
+  int addition(int *num1, int *num2);
+
+  int main()
+  {
+    //local variable definition
+    int answer;
+    int num1 = 10;
+    int num2 = 5;
+    
+    //calling a function to get addition value
+    answer = addition(&num1,&num2);
+
+    printf("The addition of two numbers is: %d\n",answer);
+    return 0;
+  }
+
+  //function returning the addition of two numbers
+  int addition(int *a,int *b)
+  {
+    return *a + *b;
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">The addition of two numbers is: 15</div>
+</div>
+
+<!--LIBRARY FUNCTIONS-->
+<div class="content">
+<h1 id="library" style="font-family:times new roman;" align="center">C LIBRARY FUNCTION</h1>
+<p>The C library functions are provided by the system and stored in the library. The C library function is also called
+  an inbuilt function in C programming.<br>To use Inbuilt Function in C, you must include their respective header files
+  , which contain prototypes and data definitions of the function.</p>
+<b>Example:</b>
+<p><code><pre>
+  #include&lt;stdio.h&gt;
+  #include&lt;ctype.h&gt;
+  #include&lt;math.h&gt;
+
+  void main()
+  {
+    int i = -10, e = 2, d = 10; //Variables Defining and Assign values
+    float rad = 1.43;
+    double d1 = 3.0, d2 = 4.0;
+
+    printf("%d\n", abs(i));
+    printf("%f\n", sin(rad));
+    printf("%f\n", cos(rad));
+    printf("%f\n", exp(e));
+    printf("%d\n", log(d));
+    printf("%f\n", pow(d1, d2));    
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">10<br>0.990105<br>0.140332<br>7.389056<br>-1145744106<br>81.000000</div>
+</div>
+
+<!--VARIABLE SCOPE-->
+<div class="content">
+<h1 id="variablescope" style="font-family:times new roman;" align="center">C VARIABLE SCOPE</h1>
+<p>A scope is a region of the program, and the scope of variables refers to the area of the program where the
+  variables can be accessed after its declaration.In C every variable defined in scope. You can define scope as the
+  section or region of a program where a variable has its existence; moreover, that variable cannot be used or accessed
+  beyond that region.<br>In C programming, variable declared within a function is different from a variable declared
+  outside of a function. The variable can be declared in three places. These are:</p>
+ <table border="1" cellspacing="0" align="center">
+ <tr>
+ <th align="center" height="50" width="200">Position</th>
+ <th align="center" height="50" width="300">Type</th>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="200">inside a function or a block</td>
+ <td align="center" height="50" width="300">local variables</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="200">Out of all functions.</td>
+ <td align="center" height="50" width="300">Global variables</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="200">In the function parameters</td>
+ <td align="center" height="50" width="300">Formal parameters</td>
+ </tr>
+ </table>
+<br>
+ <div>
+ <h3>LOCAL VARIABLES</h3>
+ <p>Variables that are declared within the function block and can be used only within the function is called local
+   variables.</p>
+ <h4>Local Scope Or Block Scope</h4>
+ <p>A local scope or block is collective program statements put in and declared within a function or block
+  (a specific region enclosed with curly braces) and variables lying inside such blocks are termed as local variables.
+   All these locally scoped statements are written and enclosed within left ({) and right braces (}) curly braces.
+   There's a provision for nested blocks also in C which means there can be a block or a function within another block
+   or function. So it can be said that variable(s) that are declared within a block can be accessed within that
+   specific block and all other inner blocks of that block, but those variables cannot be accessed outside the block.</p>
+ <b>Example:</b>
+ <p><code><pre>
+   #include &lt;stdio.h&gt;
+   int main ()
+   {
+        //local variable definition and initialization
+     int x,y,z;
+     
+       //actual initialization
+     x = 20;
+     y = 30;
+     z = x + y;
+     
+     printf ("value of x = %d, y = %d and z = %d\n", x, y, z);
+     
+     return 0;
+   }
+ </pre></code></p>
+ </div>
+<br>
+ <div>
+ <h3>GLOBAL VARIABLES</h3>
+ <p>Variables that are declared outside of a function block and can be accessed inside the function is called
+   global variables.</p>
+ <h4>Global Scope</h4>
+ <p>Global variables are defined outside a function or any specific block, in most of the case, on the top of the C
+   program. These variables hold their values all through the end of the program and are accessible within any of the
+   functions defined in your program.<br>Any function can access variables defined within the global scope, i.e., its
+   availability stays for the entire program after being declared.</p>
+ <b>Example:</b>
+ <p><code><pre>
+  #include &lt;stdio.h&gt;
+
+   //global variable definition
+   int z;
+
+   int main ()
+   {
+       //local variable definition and initialization
+       int x,y;
+     
+      //actual initialization
+     x = 20;
+     y = 30;
+     z = x + y;
+     
+     printf ("value of x = %d, y = %d and z = %d\n", x, y, z);
+     
+     return 0;
+   }
+ </pre></code></p>
+ <h4>Global Variable Initialization</h4>
+ <p>After defining a local variable, the system or the compiler won't be initializing any value to it. You have to 
+   initialize it by yourself. It is considered good programming practice to initialize variables before using.
+   Whereas in contrast, global variables get initialized automatically by the compiler as and when defined. 
+   Here's how based on datatype; global variables are defined.</p>
+ <table border="1" cellspacing="0" align="center">
+ <tr>
+ <th align="center" height="50" width="100">datatype</th>
+ <th align="center" height="50" width="300">Initial Default Value</th>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="100">int</td>
+ <td align="center" height="50" width="300">0</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="100">char</td>
+ <td align="center" height="50" width="300">'/0'</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="100">float</td>
+ <td align="center" height="50" width="300">0</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="100">double</td>
+ <td align="center" height="50" width="300">0</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="100">pointer</td>
+ <td align="center" height="50" width="300">NULL</td>
+ </tr>
+ </table>
+ </div>
+</div>
+
+<!--RECURSION-->
+<div class="content">
+<h1 id="recursion" style="font-family:times new roman;" align="center">C RECURSION</h1>
+<p>C is a powerful programming language having capabilities like an iteration of a set of statements 'n' number of
+  times. The same concepts can be done using functions also. In this chapter, you will be learning about recursion 
+  concept and how it can be used in the C program.</p>
+<h3>What is Recursion?</h3>
+<p>Recursion can be defined as the technique of replicating or doing again an activity in a self-similar way calling it
+  self again and again, and the process continues till specific condition reaches.Recursion is the process where a
+  function calls itself, and the function which calls itself is know as recursive function. In the world of programming, when
+  your program lets you call that specific function from inside that function, then this concept of calling the function
+  from itself can be termed as recursion, and the function in which makes this possible is called recursive function.</p>
+<b>Syntax + Example:</b>
+<p><code><pre>
+    void rec_prog(void) 
+    {
+      rec_prog(); //function calls itself
+    }
+
+    int main(void) 
+    {
+      rec_prog();
+      return 0;
+    }
+</pre></code></p>
+
+<p>C program allows you to do such calling of function within another function, i.e., recursion. But when you implement
+ this recursion concept, you have to be cautious in defining an exit or terminating condition from this recursive function,
+ or else it will continue to an infinite loop, so make sure that the condition is set within your program.</p>
+<br>
+<h3>Characteristics of a Recursive Function</h3>
+<ul type="circle"><li>A recursive function is a function which calls itself.</li>
+  <li>The speed of a recursive program is slower because of stack overheads.</li>
+  <li>A recursive function must have terminating conditions, and recursive expressions.</li></ul>
+<br>
+<h3>Advantages of Recursion</h3>
+<ul type="square"><li>It requires few variables which make program clean.</li>
+  <li>It shorten the complex and nested code.</li></ul>
+<br>
+<h3>Disadvantages of Recursion</h3>
+<ul type="bullets"><li>It is hard to debug recursive function.</li>
+  <li>It is tough to understand the logic of a recursive function.</li></ul>
+<p><strong>Note:-</strong> Recursive function must have a valid terminating condition otherwise it leads to infinite loop.</p>
+<h3>Factorial Program in C using Recursion</h3>
+<p><code><pre>
+  #include&lt;stdio.h&gt;
+  #include&lt;conio.h&gt;
+
+  int fact(int f) 
+  {
+    if (f==0 || f==1) 
+    {
+      printf("Calculated Factorial");
+      return 1;
+    }
+   return f * fact(f - 1);
+  }
+
+  int main(void) 
+  {
+    int f = 12;
+    printf("The factorial of %d is %d \n", f, fact(f));
+    getch();
+    return 0;
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">Calculated Factorial<br>The factorial of 12 is 479001600</div>
+<br>
+<h3>Fibonacci Program in C using Recursion</h3>
+<p><code><pre>
+  #include&lt;stdio.h&gt;
+  #include&lt;conio.h&gt;
+
+  int fibo(int g) 
+  {
+     if (g == 0) 
+    {
+     return 0;
+    }
+
+    if (g == 1) 
+   {
+    return 1;
+   }
+   return fibo(g - 1) + fibo(g - 2);
+  }
+
+  int main(void) 
+  {
+    int g;
+    printf("Calculated Fibonacci\n");
+    for (g = 0; g < 10; g++) 
+    {
+      printf("%d \t ", fibo(g));
+    }
+    getch();
+    return 0;
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">Calculated Fibonacci<br>0<br>  1<br>    1<br>     2<br>      3<br>     5<br>    8<br>     13<br>   21<br>      34<br>
+ </div>
+</div>
+
+<!--STORAGE CLASS-->
+<div class="content">
+<h1 id="storageclass" style="font-family:times new roman;" align="center">C STORAGE CLASS</h1>
+<p>In C Programming Language a “Storage Class” refers to the scope or visibility and the life time of the C Variable.
+  Scope of the C Variable defines the availability of the variable in block of the C Program, and by life time of
+  variable means how long variable will persist in the program.Storage Classes are associated with variables for describing
+  the features of any variable or function in the C program. These storage classes deal with features such as scope,
+  lifetime and visibility which helps programmers to define a particular variable during the program's runtime.
+  These storage classes are preceded by the data type which they had to modify.</p>
+<h3>Function Of Storage Class</h3>
+<ul><li>It tell the location of the C Variable.</li>
+  <li>Sets the initial or default value of C Variable.</li>
+  <li>It defines the scope of the C Variable.</li>
+  <li>It defines the life time of C Variable.</li></ul>
+<h3>Types of Storage Classes</h3>
+ <p>C Programming Language Supports following four type of storage classes:</p>
+<ul type="square"><li>auto</li>
+  <li>register</li>
+  <li>static</li>
+  <li>extern</li></ul>
+<br>
+ <div>
+ <h4>auto – Storage Class</h4>
+ <p>It is the default storage class for local variables. Variables with auto storage class are declared at the beginning
+   of a code block, and memory is allocated automatically as the program execution enters to a code block and frees up
+   automatically on exiting from the code block. The scope of automatic variables is local to the block where the
+   declared and are not accessible directly in the other block.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+   auto [data_type] [variable_name];
+ </pre></code></p>
+ <b>Example :</b>
+ <p><code><pre>
+    auto int a;
+ </pre></code></p>
+ </div>
+<br>
+ <div>
+ <h4>register – Storage Class</h4> 
+ <p>C Variables with register storage class are same as local variables to the code block but the are stored in CPU
+   register instead of computer memory. Hence it enables the quick access of that variable. Maximum size of the
+   variable is equal to register size and dependent upon the register size.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+   register [data_type] [variable_name];
+ </pre></code></p>
+ <b>Example:</b>
+ <p><code><pre>
+   register int a;
+ </pre></code></p>
+ </div>
+<br>
+ <div>
+ <h4>static – Storage Class</h4>
+ <p>It is default storage class for global variables.Static storage class can be used only if we want the value of a
+   variable to persist between different function calls. C Variable declared with static storage class will keep its
+   value retained for different function calls.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+   static [data_type] [variable_name];
+ </pre></code></p>
+ <b>Example:</b>
+ <p><code><pre>
+    static int a;
+ </pre></code></p>
+ </div>
+<br>
+ <div>
+ <h4>extern – Storage Class</h4>
+ <p>C Variable declared with extern storage class is said to be “Global Variables”, it means variables is accessible
+   throughout the program till the end of program execution. External variables are declared outside the functions and
+   can be invoked from and anywhere in a program.External variables can be accessed very fast as compared to any other
+   storage classes.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+     extern [data_type] [variable_name];
+ </pre></code></p>
+ <b>Example:</b>
+ <p><code><pre>
+     extern int a;
+ </pre></code></p>
+ </div>
+</div>
+
+
+<!--ARRAYS-->
+<div class="content">
+<h1 id="array" style="font-family:times new roman;" align="center">C ARRAYS</h1>
+<p>An array is a series of elements of the similar type placed in contiguous memory locations that can be accessed
+  individually by adding an index or subscript to a unique identifier. An array is made up of a key and a value pair,
+  and the key points to the value. Arrays may be of any variable type.</p><br>
+ <div>
+ <h2>TYPES OF ARRAY:</h2>
+ <ul>
+  <li>One Single Dimensional Array</li>
+  <li>Multi dimensional array(Example : Two dimensional array)</li>
+ </div>
+<br>
+ <div>
+ <h3>Single One Dimensional Array</h3><br>
+ <p>A one-dimensional array is a structured collection of array elements that can be accessed individually by
+   specifying the position of a element with a single index value.</p><br>
+ <ol type="A">
+  <b><li>Declaring Single Dimensional Array:</li></b><br>
+  <p><code><pre>
+   &lt;data-type&gt; &lt;array_name&gt; [size];                //total size = length of array * size of data type
+  </pre></code></p>
+  <b>Example:</b>
+  <p><code><pre>
+   int a[100];
+  </pre></code></p>
+<br><br>
+  <b><li>Initializing Single Dimensional Array:</li></b><br>
+  <p>Arrays can be initialized at declaration time:</p><br>
+  <p><code><pre>
+    int age[5]={22,25,30,32,35};
+  </pre></code></p>
+  <p>Initializing each element separately in a loop:</p><br>
+  <p><code><pre>
+     int myArray[5];
+     int n = 0;                                   
+     // Initializing elements of array seperately
+     for(n=0;n&lt;sizeof(myArray)/sizeof(myArray[0]);n++)
+       {
+               myArray[n] = n; 
+       }
+  </pre></code></p>
+<br>
+  <p>Pictorial representation of Array:</p>
+   <table border= "1" cell spacing="0" align="center">
+    <tr>
+    <td align="center" height="50" width="50">22</td>
+    <td align="center" height="50" width="50">25</td>
+    <td align="center" height="50" width="50">30</td>
+    <td align="center" height="50" width="50">32</td>
+    <td align="center" height="50" width="50">35</td>
+    </tr>
+   </table>
+   <br>
+  <b><li>Accessing Array’s Elements:</li></b><br>
+  <p>An array elements can be accessed easily by index or subscript like array_name[index]. Indexing for an array
+   starts from zero (0) to the last element of an array is array_name[size-1] where size is the number of elements 
+   of the array.</p>
+ <br>
+ <b>EXAMPLE OF ONE DIMENSIONAL ARRAY</b><br>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  int main()
+  {
+      int i;
+      int arr[5] = {10,20,30,40,50};  
+                 // declaring and Initializing array
+
+      for (i=0;i<5;i++)
+      {
+           // Accessing each variable
+           printf("value of arr[%d] is %d \n", i, arr[i]);
+      }
+   }
+ </pre></code></p>
+ <h4>OUTPUT:</h4><br>
+  <div id="ifelse">value of arr[0] is 10<br>value of arr[1] is 20<br>value of arr[2] is 30<br>value of arr[3] is 40<br>value of arr[4] is 50</div>
+ <br><br>
+ <h3>MULTI-DIMENSIONAL ARRAY</h3>
+ <p>Multidimensional arrays is nothing just an array of arrays. We can declare a multidimensional array, as below:</p>
+ <p><code><pre>
+   <data-type> <array_name>[size][size2][size3]…
+ </pre></code></p>
+<br>
+ <b>EXAMPLE OF MULTI DIMENSIONAL ARRAY</b><br>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  int main()
+  {
+     int i,j;
+     // declaring and Initializing array
+     int arr[2][2] = {10,20,30,40};  
+
+     for (i=0;i<2;i++)
+     {
+        for (j=0;j<2;j++)
+        {
+           // Accessing variables
+           printf("value of arr[%d][%d] is %d\n",i,j,arr[i][j]);
+        }
+     }
+  }
+ </pre></code></p>
+ <h4>OUTPUT:</h4>
+  <div id="ifelse">value of arr[0][0] is 10<br>value of arr[0][1] is 20<br>value of arr[1][0] is 30<br>value of arr[1][1] is 40</div>
+<br><br>
+ </div>
+</div>
+
+<!--STRINGS-->
+<div class="content">
+<h1 id="string" style="font-family:times new roman;" align="center">C STRINGS</h1>
+<p>A sequence of characters, internally stored in the form of an array of characters is called as string.In C 
+  programming, the one-dimensional array of characters are called strings, which is terminated by a
+  null character '\0'.</p>
+ <div>
+  <b>Declaration of String:</b><br>
+  In C, a string can be specified in two ways:
+  <ol type="a">
+   <li>Character Array:A string declared as an array, where each character represents an element of that
+     array, is called as Character Array.</li>
+    <b>Syntax:</b>
+    <p><code><pre>
+     char array_Name[] = {char1,char2,char3………};
+    </pre></code></p>
+   <li>String Literal:A string declared as an array, where the whole string represents a complete array,
+     is called as String Literal.</li>
+    <b>Syntax:</b>
+    <p><code><pre>
+      char array_Name[] = “stringValue”
+    </pre></code></p>
+  </ol></div>
+<br>
+ <div>
+  <b>Initialisation of String:</b><br>
+  <p><code><pre>
+    char name[6] = {'C', 'l', 'o', 'u', 'd', '\0'};
+  <p>or</p>
+    char name[] = "Cloud";
+  </pre></code></p>
+  <p><b>Memory Representation of Above Defined String:</b></p>
+  <table border= "1" cell spacing="0" align="center">
+  <tr>
+  <td align="center" height="50" width="50">c</td>
+  <td align="center" height="50" width="50">l</td>
+  <td align="center" height="50" width="50">o</td>
+  <td align="center" height="50" width="50">u</td>
+  <td align="center" height="50" width="50">d</td>
+  <td align="center" height="50" width="50">/0</td>
+  </tr>
+  </table></div><br>
+<b>Example of C program to demonstrate Declaration of Strings :</b><br>
+<p><code><pre>
+  #include&lt;stdio.h&gt;  
+  #include&lt;string.h&gt;  
+  void main()
+  {    
+   char chr[]={'H', 'E', 'L', 'L', 'O', ' ', 'C', '\0'};    
+   char str[]="HELLO C";    
+   printf("String in form of character array: %s\n", chr);    
+   printf("String in form of string literal: %s\n", str);    
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4><br>
+ <div id="ifelse">String in form of character array: HELLO C<br>String in form of string literal: HELLO C</div>
+<br><br>
+<b>Example of C program to demonstrate Initialisation of Strings :</b><br>
+<p><code><pre>
+  #include&lt;stdio.h&gt;
+  int main ()
+  {
+   char name[6] = {'C', 'l', 'o', 'u', 'd', '\0'};
+   printf("Tutorials%s\n", name );
+   return 0;
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">TutorialsCloud</div>
+</div>
+
+<!--POINTERS-->
+<div class="content">
+<h1 id="pointer" style="font-family:times new roman;" align="center">C POINTERS</h1>
+<p>Pointers is one of the most powerful feature available in C Programming Language . Pointer is a special type of
+  variable that refers to the address of other data object or variable.Variable can be of any data type i.e int,
+  float, char, double, short etc.Pointer is used for dynamic memory allocation.A pointer is a variable in C,
+  and the pointers value is the address of a memory location.</p>
+<h3>Benefits of Using Pointers</h3>
+<ul><li>Pointers allow the passing of arrays and strings to functions more efficiently.</li>
+  <li>Pointers make it possible to return more than one value from the function.</li>
+  <li>Pointers reduce the length and complexity of a program.</li>
+  <li>Pointers increase the processing speed.</li>
+  <li>Pointers save the memory.</li></ul>
+<b>Syntax:</b>
+<p><code><pre>
+  type *variable_name;
+</pre></code></p><br>
+<b>Example:</b>
+<p><code><pre>
+  int  *width;
+  char  *letter;
+</pre></code></p>
+<h3>How to use Pointers</h3>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+ int main ()
+ {
+   int  n = 20, *pntr;  //actual and pointer variable declaration
+
+   pntr = &n;  //store address of n in pointer variable
+
+   printf("Address of n variable: %x\n", &n  );
+
+   //address stored in pointer variable
+   printf("Address stored in pntr variable: %x\n", pntr );
+
+   //access the value using the pointer
+   printf("Value of *pntr variable: %d\n", *pntr );
+
+   return 0;
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">Address of n variable: 2cb60f04<br>Address stored in pntr variable: 2cb60f04<br>Value of *pntr variable: 20</div>
+</div>
+
+<!--MEMORY MANAGEMENT-->
+<div class="content">
+<h1 id="memorymanag" style="font-family:times new roman;" align="center">C MEMORY MANAGEMENT</h1>
+<p>Memory management is one of the most fundamental and important aspect for any computer programming language. In
+  many programming language you don’t have to worry about the memory management, but in C Programming Language you to
+  do memory management manually. C is one of the most powerful programming language. Pointer is one of the most
+  powerful feature of the C programming language which gives you the ability to point memory locations. This feature
+  enables you easy memory access.<br>As we all know computer memory is made up of large number of cells, which further
+  organized as addressable registers. Each register is responsible to store a sequence of bits.So it is always
+  necessary to manage these memory locations effectively to increase the utilization.</p><br>
+<h3>Management of Memory</h3>
+<p>Almost all computer languages can handle system memory. All the variables used in your program occupies a precise
+ memory space along with the program itself, which needs some memory for storing itself (i.e., its own program).
+ Therefore, managing memory utmost care is one of the major tasks a programmer must keep in mind while writing
+ codes.When a variable gets assigned in a memory in one program, that memory location cannot be used by another
+ variable or another program. So, C language gives us a technique of allocating memory to different variables and
+ programs.</p><br>
+ <h3>Types of memory allocations in C</h3>
+ <p>There are two ways in which memory can be allocated in C:
+ <ol type="i)"><li>Static memory allocation or Compile time allocation</li>
+  <li>Dynamic memory allocation or Run time allocation</li></ol>
+<br>
+ <h4>Static or Compile Time Memory Allocation</h4>
+ <p>In this method desired memory is allocated at the time of variable declaration or beginning of the program.
+   Amount of memory allocation is fixed and is determined at the time of program compilation.</p>
+ <b>Example:</b>
+ <p><code><pre>
+    int a,b;
+ </pre></code></p>
+ <p>When the first statement int a,b; is compiled 4 consecutive bytes(integer occupies 4 bytes in a 32 bit machine) for
+   each variable a,b will be allocated.</p>
+ <strong>Drawbacks of static memory allocation:</strong>
+ <ul type="circle"><li>If we declare more number of elements and we are using less number of elements then the memory
+   allocated for the not used variables will be wasted.The unused memory cells are not made available to other
+   applications.This leads to inefficient use of memory.</li>
+  <li>Size for the data type or variable must be know before.</li>
+  <li>We can not change the size of variable at run time.</li></ul>
+<br>
+ <h4>Dynamic or Runtime Memory allocation</h4>
+ <p>In C Programming Language it is not always possible to predict the memory requirement for the program, so it is
+  better to allocate the memory in real time when ever required, it makes efficient use of memory.<br>C Programming 
+  Language provides the following dynamic allocation and de allocation function –
+ <ul><li>malloc()</li>
+  <li>calloc()</li>
+  <li>realloc()</li>
+  <li>free()</li></ul>
+  malloc,calloc and realloc is used for memory allocation and delocation is achieved by the use of free function.</p><br>
+ <b>Allocating A Block of Memory-malloc()</b>
+ <p>The malloc() function allocates the memory at run time whenever required. It allocates the memory block with
+   required number of contiguous bytes in the memory and returns the pointer to the first byte(base address) or null 
+   if there is some error occur.</p><br>
+ <b>Syntax:</b>
+ <p><code><pre>
+   pointer=(data-type *)malloc(block_size);
+ </pre></code></p><br>
+ <b>Example:</b>
+ <p><code><pre>
+     int * p;
+     p = (int *) malloc (sizeof (int));
+     * p = 5;
+ </pre></code></p>
+ <p><strong>Explanation:</strong><ol type="i"><li>First we declare a pointer variable ‘p’.</li>
+  <li>Then the pointer itself is equal to a pointer type int that contains the memory address space for an int.</li>
+  <li>Sizeof () return the space it occupies what you want, if you put int in, such as 2 bytes, because we have assigned two bytes.</li>
+  <li>Finally, now that the pointer is contained, we give a value.</li></ol><br>
+ <b>Allocating Multiple blocks of Memory-calloc()</b>
+ <p>The calloc() function is same malloc() except it is used to allocate multiple memory block of same size then all
+   bytes sets to zero.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+    pointer=(data-type *)calloc(n,sizeof(block_size));
+ </pre></code></p>
+ <p>It allocates contiguous space for ‘n’ blocks,each of size of block_size bytes.All bytes are initialized to zero and a pointer to the first byte of the allocated memory block is returned.</p>
+ <p><code><pre>
+   calloc(m,n) is equivalent to p=m*malloc(n);
+ </pre></code></p>
+<br>
+ <b>Example:</b>
+ <p>An int array of 10 elements can be allocated as follows.</p>
+ <p><code><pre>
+   int * array = (int *) calloc (10, sizeof (int));
+ </pre></code></p>
+ <p>We can achieve same using malloc() function as below –</p>
+ <p><code><pre>
+   int * array = (int *) malloc (sizeof (int) * 10);
+ </pre></code></p>
+ <p>However area reserved by malloc() function to the states that are undefined, the area allocated by the calloc
+  function contains a 0.</p>
+<br>
+ <h4>Differnce between malloc() and calloc()</h4>
+ <ol type="a">
+  <li>malloc() allocates a bytes of memory but calloc() allocates blocks of memory.</li>
+  <li>malloc() takes a single argument(memory required in bytes) but calloc() takes 2 arguments (number of variables to allocate memory,size in bytes of a single variable)</li>
+  <li>The memory allocated using malloc() function contains garbage values,the memory allocated by calloc() function contains the value 0.</li>
+ </ol><br><br>
+ <h4>Resize the size of a Memory-realloc()</h4>
+ <p>The realloc() function alllow us to reset the size of the allocated area.</p>
+ <b>Syntax:</b>
+ <p><code><pre>
+     ptr=realloc(ptr,new_size);
+ </pre></code></p>
+ <p>Where ptr is holding the current base address of the memory block and new_size holds the size in bytes.</p>
+<br>
+ <h4>Releasing the used memory-free()</h4>
+ <p>The free() function is used to de allocate the allocated memory using malloc() or calloc() function. It is always
+  important to release the memory that is not in use, so it can be used in future.</p><br>
+ <b>Syntax:</b>
+ <p><code><pre>
+    free(ptr);
+ </pre></code></p>
+ <p><strong>Note :-</strong> ptr must be a valid pointer to the address otherwise it can result into system crash.</p><br>
+ <b>Example:</b>
+ <p><code><pre>
+   #include&lt;stdio.h&gt;
+   int main()
+   {
+    int *ptr;
+ 
+    ptr = (int *)malloc(sizeof(int));
+ 
+    if (ptr== 0)
+     {
+      printf("ERROR: Out of memory\n");
+      return 1;
+     }
+   
+   *ptr = 10;
+    printf("%d\n", *ptr);
+  
+    free(ptr);
+ 
+    return 0;
+   }
+ </pre></code></p>
+</div>
+
+<!--DYNAMIC MEMORY ALLOCATION-->
+<div class="content">
+<h1 id="dynamic" style="font-family:times new roman;" align="center">C DYNAMIC MEMORY ALLOCATION</h1>
+<p>In Static Memory Allocation, memory is allocated at compile time, that can’t be modified while executing
+  program and is generally used in array.In Dynamic Memory Allocation, memory is allocated at run time, that
+  can be modified while executing program and is generally used in linked list.malloc, calloc, or realloc are the
+  three functions used to manipulate memory. These commonly used functions are available through the
+  stdlib library so you must include this library to use them.</p>
+<h3>C Dynamic Memory Allocation Function:</h3>
+<table border= "1" cell spacing="0" align="center">
+<tr>
+<th align="center" height="50" width="100">Function</th>
+<th align="center" height="50" width="300">Syntax</th>
+<th align="center" height="50" width="500">Uses</th>
+</tr>
+<tr>
+<td align="center" height="50" width="100">malloc()</td>
+<td align="center" height="50" width="300">malloc (number *sizeof(int));</td>
+<td align="center" height="50" width="500">To allocate a single blockof requested memory.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">calloc()</td>
+<td align="center" height="50" width="300">calloc (number, sizeof(int));</td>
+<td align="center" height="50" width="500">To allocate multiple block of requested memory.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">realloc()</td>
+<td align="center" height="50" width="300">realloc (pointer_name, number * sizeof(int));</td>
+<td align="center" height="50" width="500">To allocate the memory occupied by malloc() and calloc() function.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="100">free()</td>
+<td align="center" height="50" width="300">free (pointer_name);</td>
+<td align="center" height="50" width="500">To free the dynamically allocated memory.</td>
+</tr>
+</table>
+<br>
+ <div>
+ <h3>malloc() Functions:</h3>
+ <ul>
+  <li>malloc function is used to allocate space in memory during the execution of the program.</li>
+  <li>malloc function does not initialize the memory allocated during execution.  It carries garbage value.</li>
+  <li>malloc function returns null pointer if it couldn't able to allocate requested amount of memory.</li>
+ </ul><br>
+ <b>Example of malloc():</b><br>
+ <p><code><pre>
+   #include&lt;stdio.h&gt;
+   #include&lt;string.h&gt;
+   #include&lt;stdlib.h&gt;
+   void main()
+   {
+      char *mem_alloc;                 //memory allocated dynamically
+      mem_alloc = malloc( 15 * sizeof(char) );
+
+      if(mem_alloc== NULL )
+      {
+        printf("Couldn't able to allocate requested memory\n");
+      }
+      else
+      {
+        strcpy( mem_alloc,"iiit bhubaneswar.in");
+      }
+
+      printf("Dynamically allocated memory content : %s\n", mem_alloc );
+      free(mem_alloc);
+   }
+ </pre></code></p><br>
+ <h4>OUTPUT:</h4><br>
+ <div id="ifelse">Dynamically allocated memory content : iiit bhubaneswar.in</div>
+ <br><br>
+ <h3>calloc() Functions:</h3>
+ <p>calloc() and malloc() is similar, But calloc() allocates memory for zero-initializes. However, malloc () does not.</p><br>
+ <b>Example of calloc():</b><br>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  #include&lt;string.h&gt;
+  #include&lt;stdlib.h&gt;
+  void main()
+  {
+    char *mem_alloc;                   //memory allocated dynamically
+    mem_alloc = calloc( 15, sizeof(char) );
+    if( mem_alloc== NULL )
+    {
+        printf("Couldn't able to allocate requested memory\n");
+    }
+    else
+    {
+        strcpy( mem_alloc,"iiit bbsr.in");
+    }
+
+    printf("Dynamically allocated memory content : %s\n", mem_alloc );
+    free(mem_alloc);
+  }
+ </pre></code></p><br>
+ <h4>OUTPUT:</h4><br>
+  <div id="ifelse">Dynamically allocated memory content : iiit bbsr.in</div>
+<br><br>
+ <h3>realloc() Function:</h3>
+ <ul>
+  <li>realloc function modifies the allocated memory size by malloc and calloc functions to new size.</li>
+  <li>If enough space doesn't exist in the memory of the current block to extend, a new block is allocated for 
+    the full size of reallocation, then copies the existing data to the new block and then frees the old block.</li>
+ </ul><br>
+ <h3>free Function:</h3>
+ <p>Free function frees the allocated memory by malloc (), calloc (), realloc () functions.</p><br>
+ <b>Example of realloc() and free:</b><br>
+ <p><code><pre>
+   #include&lt;stdio.h&gt;
+   #include&lt;string.h&gt;
+   #include&lt;stdlib.h&gt;
+   void main()
+   {
+     char *mem_alloc;                     //memory allocated dynamically
+    mem_alloc = malloc( 20 * sizeof(char) );
+
+    if( mem_alloc == NULL )
+    {
+        printf("Couldn't able to allocate requested memory\n");
+    }
+    else
+    {
+        strcpy( mem_alloc,"iiit bbsr.in");
+    }
+
+    printf("Dynamically allocated memory content  : " \ "%s\n", mem_alloc );
+    mem_alloc=realloc(mem_alloc,100*sizeof(char));
+
+    if( mem_alloc == NULL )
+    {
+        printf("Couldn't able to allocate requested memory\n");
+    }
+    else
+    {
+        strcpy( mem_alloc,"space is extended upto 100 characters");
+    }
+
+    printf("Resized memory : %s\n", mem_alloc );
+    free(mem_alloc);
+   }
+ </pre></code></p>
+ <h4>OUTPUT:</h4>
+  <div id="ifelse">Dynamically allocated memory content : iiit bbsr.in</div>
+<br><br>
+ </div>
+</div>
+
+<!--STRUCTURE-->
+<div class="content">
+<h1 id="structure" style="font-family:times new roman;" align="center">C STRUCTURE</h1>
+<p>In C Programing Language we can use arrays when we want hold multiple element of the homogeneous data type in
+  single variable, but what if we want to hold heterogeneous data type element, using structure you can wrap one or
+  more variables that may be in different data types into one.</p><br>
+<b>Syntax:</b>
+<p><code><pre>
+  struct struct_name{ structure_member };
+</pre></code></p><br>
+<ul><li>The structure is something similar to an array; the only difference is array is used to store the same data types.</li>
+ <li><strong>struct</strong> keyword is used to declare the structure in C.</li>
+ <li>To define a structure, you use the struct keyword followed by structure name. The variables which are declared 
+ inside the structure are called as ‘members of structure’.</li></ul>
+<p><code><pre>
+  struct student
+  {
+           int id;
+           char name[20];
+           float percentage;
+  };
+</pre></code></p>
+The student structure contains id as an positive integer, name as a string, percentage code as a float.</p><br>
+
+<h3>Declaring Structure</h3>
+<p>The above example only defines an student structure without creating any structure variable. To declare a structure
+  variable, you can do it in two ways:</p>
+<ol type="i"><li>Declaring structure with variables together:</li>
+<p><code><pre>
+  struct struct_name 
+   {
+        structure_member;
+      ...
+   } instance_1,instance_2 instance_n;
+</pre></code></p>
+ <li>Declaring the structure variable after you define the structure:</li>
+<p><code><pre>
+  struct struct_name instance_1,instance_2 instance_n;
+</pre></code></p>
+<p><strong>Note :–</strong> When declaring structure following points need to be keep in mind –
+ <ul type="square"><li>Structure is always terminated with semicolon (;).</li>
+  <li>Structure name as struct_name can be later used to declare structure variables of its type in a program.</li></ul><p>
+</ol><br><br>
+<h3>Acessing Structure Members</h3>
+<p>Member operator ‘.’ is used to access the individual structure members. It is also known as ‘dot operator’ or
+  ‘period operator’.</p>
+<b>Syntax:</b>
+<p><code><pre>
+  structure_var.member;
+</pre></code></p>
+<b>Example:</b>
+<p><code><pre>
+  #include &lt;stdio.h&gt;
+  #include &lt;conio.h&gt;
+  struct student
+  {
+           char name[20];
+           char addr[100];
+  } student;
+ 
+  void main()
+  {
+   clrscr();
+   printf("\n Enter Student Name : ");
+   gets(student.name);
+   printf("\n Enter Address: ");
+   gets(student.addr);
+   printf("\n\n Student Name : %s",student.name);
+   printf("\n\n Address : %s",student.addr);
+   getch();
+  }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+ <div id="ifelse">Enter Student Name : XYZ<br>Enter Address: Flat no 18,Yamuna Enclave,Sunar marg, Mumbai-110021<br><br>
+  XYZ<br>Flat no 18,Yamuna Enclave,Sunar marg, Mumbai-110021</div>
+</div>
+
+<!--UNION-->
+<div class="content">
+<h1 id="union" style="font-family:times new roman;" align="center">C UNION</h1>
+<p>Union is user defined data type used to wrap up one or more variables that may be in different data types into
+  single variable at single memory location. Union is similar to the structure in concepts, except allocating memory
+  for their members.Structure allocates storage space for all its members separately,whereas union allocates one
+  common storage space for all its members.
+ <ul type="circle"><li>Unions are like structures except it used less memory.</li>
+  <li>The keyword union is used to declare the structure in C.</li>
+  <li>Variables inside the union are called members of the union.</li></ul></p><br>
+<b>Difference between Structure and Union</b><br>
+<ul><li>Union allocates one common storage space for all its members.</li>
+ <li>In union if any of the data element’s value is changed than the other data element value even changes, i.e. the value of one data element of a union depends on all other data elements.</li>
+ <li>The only major advantage that a union has over structure is to save memory space.</li>
+ <li>Union holds value for one data type which requires larger storage among their members.</li></ul><br>
+<b>Syntax:</b>
+<p><code><pre>
+ union union_tag
+  {
+   <data-type> element 1;
+   <data-type> element 2;
+   <data-type> element 3;
+  }union_variable;
+</pre></code></p><br>
+<b>Example:</b>
+<p><code><pre>
+  union student
+ {
+            int id;
+            char name[20];
+            float percentage;
+ } student1;
+</pre></code></p><br>
+<h3>Accessing Union Members</h3>
+<b>Syntax:</b>
+<p><code><pre>
+ union_var.member;
+</pre></code></p>
+<p>To access member of a union you use the (.) operator, for instance: student1.name</p><br>
+<b>Example:</b>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+ #include&lt;string.h&gt;
+
+ union Courses
+ {
+   char  WebSite[50];
+   char  Subject[50];
+   int   Price;
+ };
+ 
+ void main( )
+ {
+   union Courses C;
+   
+   strcpy( C.WebSite, "iiit bbsr.in");   
+   printf( "WebSite : %s\n", C.WebSite);
+      
+   strcpy( C.Subject, "The C Programming Language");    
+   printf( "Book Author : %s\n", C.Subject);
+   
+   C.Price = 0;
+   printf( "Book Price : %d\n", C.Price);
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4>
+  <div id="ifelse">Website : iiit bbsr.in<br>Book Author: The C Programming Language<br>Book Price: 0</div>
+</div>
+
+<!--TYPE DEF-->
+<div class="content">
+<h1 id="typedef" style="font-family:times new roman;" align="center">C typedef</h1>
+<p>In C Programming Language typedef ( type definition ) is a keyword allows us to create an alias for existing
+  data types. Once, we have created a type definition, then we can declare a variable using the alias we created.
+  This alias is equivalent to the data type for which it is created. Remember that, in addition to the type
+  definition or alias we are always free to use the original keyword to define variable of any data type.</p>
+<b>Syntax:</b><br>
+<p><code><pre>
+  typedef existing_type new_name;
+</pre></code></p>
+<p>It is easy to create alias, put the typedef keyword followed by the existing type name and the new name for that type.</p>
+<p><code><pre>
+  typedef int my_type;
+  my_type var1, var2, var3;
+</pre></code></p>
+<p>We have created the alias for integer data type as “my_type”, now my_type behaves same as an integer.</p>
+<p>Here's a sample code snippet as of how typedef command works in C:
+<p><code><pre>
+  typedef signed long slong;
+</pre></code></p>
+slong in the statement as mentioned above is used for a defining a signed qualified long kind of data type. Now the
+ thing is this 'slong', which is an user-defined identifier can be implemented in your program for defining any signed
+ long variable type within your C program. This means:
+<p><code><pre>
+slong g, d;
+</pre></code></p>
+will allow you to create two variables name 'g' and 'd' which will be of type signed long and this quality of signed
+ long is getting detected from the slong (typedef), which already defined the meaning of slong in your program.</p><br>
+<p>The concept of typedef can be implemented for defining a user-defined data type with a specific name and type. This
+  typedef can also be used with structures of C language. Here how it looks like:
+<p><code><pre>
+  typedef struct
+ {
+    type first_member;
+    type sec_member;
+    type thrid_member;
+ } nameOfType;
+</pre></code></p>
+Here nameOfType correspond to the definition of structure allied with it. Now, this nameOfType can be implemented by 
+ declaring a variable of this structure type.</p><br>
+<p><code><pre>
+   nameOfType type1, type2;
+</pre></code></p>
+<br>
+<b>Advantages of typedef</b>
+<ul><li>It makes the program more portable.</li>
+ <li>typedef make complex declaration easier to understand.</li></ul>
+<br>
+<h4>typedef with Structure</h4>
+<p><code><pre>
+  struct student
+ {
+  int id;
+  char *name;
+  float percentage;
+ };  
+ struct student a,b;
+</pre></code></p>
+<p>As we can see we have to include keyword struct every time you declare a new variable, but if we use typedef then
+  the declaration will as easy as below
+<p><code><pre>
+  typedef struct
+  {
+   int id;
+   char *name;
+   float percentage;
+  }student;  
+  student a,b;
+</pre></code></p>
+this way typedef make your declaration simpler.</p>
+<br>
+<h4>typedef with Union</h4>
+<p><code><pre>
+  typedef union
+ {
+  int id;
+  char *name;
+  float percentage;
+ }student;  
+ student a,b;
+</pre></code></p>
+<br>
+<h4>typedef with Enum</h4>
+<p><code><pre>
+  typedef enum {sun, mon, tue, wed, thu, fri, sat} weekday;
+  weekday day1;
+</pre></code></p>
+<h4>typedef with Pointers</h4>
+<p>typedef can be implemented for providing a pseudo name to pointer variables as well. In this below-mentioned
+ code snippet, you have to use the typedef, as it is advantageous for declaring pointers.
+<p><code><pre>
+  int* a;
+</pre></code></p>
+The binding of pointer (*) is done to the right here. With this kind of statement declaration, you are in fact 
+ declaring an as a pointer of type int (integer).</p>
+<p><code><pre>
+ typedef int* pntr;
+ pntr g, h, i;
+</pre></code></p>
+<br>
+<b>Example</b><br>
+<p><code><pre>
+  #include&lt;stdio.h&gt;
+  #include&lt;string.h&gt;
+
+  typedef struct professor
+  {
+    char p_name[50];
+    int p_sal;
+  } prof;
+ void main(void)
+ {
+    prof pf;
+    printf("\n Enter Professor details: \n  \n");
+    printf("\n Enter Professor name:\t");
+    scanf("% s", pf.p_name);
+    printf("\n Enter professor salary: \t");
+    scanf("% d", &pf.p_sal);
+    printf("\n Input done ! ");
+ }
+</pre></code></p>
+</div>
+
+<!--FILE HANDLING-->
+<div class="content">
+<h1 id="file" style="font-family:times new roman;" align="center">C FILE HANDLING</h1>
+<p>C files I/O functions handle data on a secondary storage device, such as a hard disk. C can handle files as 
+ <strong>Stream-oriented data (Text)</strong> files, and <strong>System oriented data (Binary)</strong> files.</p><br>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<td align="center" height="50" width="300">Stream-oriented data files</td>
+<td align="left" height="50" width="800">
+The data is stored in the same manner as it appears on the screen. The I/O operations like buffering, data conversions, etc. take place automatically.
+</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300">System-oriented data files</td>
+<td align="left" height="50" width="800">
+System-oriented data files are more closely associated with the OS and data stored in memory without converting into text format.
+</td>
+</tr>
+</table>
+ <div>
+ <h3>C File Operations</h3>
+ <p>Five major operations can be performed on file are:<br>
+ <ul>
+  <li>Creation of a new file.</li>
+  <li>Opening an existing file.</li>
+  <li>Reading data from a file.</li>
+  <li>Writing data in a file.</li>
+  <li>Closing a file.</li>
+ </ul></p>
+ </div>
+<br>
+ <div>
+ <h3>Steps for Processing a File</h3>
+ <p>Five major operations can be performed on file are:<br>
+ <ul>
+  <li>Declare a file pointer variable.</li>
+  <li>Open a file using fopen() function.</li>
+  <li>Process the file using the suitable function.</li>
+  <li>Close the file using fclose() function.</li>
+ </ul></p>
+ </div>
+<br>
+<p>To handling files in C, file input/output functions available in the stdio library are:<br></p>
+<table border="1" cellspacing="0" align="center">
+<tr>
+<th align="center" height="50" width="300">Function</th>
+<th align="center" height="50" width="600">Uses/Purposes</th>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="fopen.html">fopen</a></td>
+<td align="center" height="50" width="600">Opens a file.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="fclose.html">fclose</a></td>
+<td align="center" height="50" width="600">Closes a file.</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="getc.html">getc</a></td>
+<td align="center" height="50" width="600">Reads a character from a file</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="putc.html">putc</a></td>
+<td align="center" height="50" width="600">Writes a character to a file</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="getw.html">getw</a></td>
+<td align="center" height="50" width="600">Reads integer</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="putw.html">putw</a></td>
+<td align="center" height="50" width="600">Writes an integer</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="fprintf.html">fprintf</a></td>
+<td align="center" height="50" width="600">Prints formatted output to a file</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="fscanf.html">fscanf</a></td>
+<td align="center" height="50" width="600">Reads formatted input from a file</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="fgets.html">fgets</a></td>
+<td align="center" height="50" width="600">Read string of characters from a file</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="fputs.html">fputs</a></td>
+<td align="center" height="50" width="600">Write string of characters to file</td>
+</tr>
+<tr>
+<td align="center" height="50" width="300"><a href="feof.html">feof</a></td>
+<td align="center" height="50" width="600">Detects end-of-file marker in a file.</td>
+</tr>
+</table>
+</div>
+
+<!--fopen and fclose-->
+<div class="content">
+<h1 id="fopenclose" style="font-family:times new roman;" align="center">C fopen and fclose</h1>
+<h3>fopen</h3>
+<p>C fopen is a C library function used to open an existing file or create a new file.<br></p>
+<p>The basic format of fopen is:</p><br>
+<b>Syntax:</b>
+<p><code><pre>
+  FILE *fopen( const char * filePath, const char * mode );
+</pre></code></p>
+ <div>
+ <h3>Parameters</h3>
+  <ul>
+  <li>filePath: The first argument is a pointer to a string containing the name of the file to be opened.</li>
+  <li>mode: The second argument is an access mode.</li>
+  </ul>
+ <p><strong>C fopen()</strong> access mode can be one of the following values:</p><br>
+ <table border="1" cellspacing="0" align="center">
+ <tr>
+ <th align="center" height="50" width="300">Mode</th>
+ <th align="center" height="50" width="800">Description</th>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="300">r</td>
+ <td align="center" height="50" width="800">Opens an existing text file.</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="300">w</td>
+ <td align="center" height="50" width="800">Opens a text file for writing if the file doesn't exist
+   then a new file is created.</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="300">a</td>
+ <td align="center" height="50" width="800">Opens a text file for appending(writing at the end of existing file)
+   and create the file if it does not exist.</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="300">r+</td>
+ <td align="center" height="50" width="800">Opens a text file for reading and writing.</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="300">w+</td>
+ <td align="center" height="50" width="800">Open for reading and writing and create the file if it does not exist.
+   If the file exists then make it blank.</td>
+ </tr>
+ <tr>
+ <td align="center" height="50" width="300">r</td>
+ <td align="center" height="50" width="800">Open for reading and appending and create the file if it does not exist.
+  The reading will start from the beginning, but writing can only be appended.</td>
+ </tr>
+ </table>
+ </div>
+<br>
+<h3>fclose</h3>
+<p><strong>fclose()</strong> function is C library function and it's used to releases the memory stream, opened by
+  fopen() function.<br></p>
+<p>The basic format of fclose is:<br></p>
+<b>Syntax:</b>
+<p><code<<pre>
+  int fclose( FILE * stream );
+</pre></code></p> 
+<p><b>Return Value:</b>C fclose returns EOF in case of failure and returns 0 on success.<br></p>
+<b>Example:</b>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+  int main()
+  {
+    FILE *fp;
+    fp = fopen("fileName.txt","w");
+    fprintf(fp, "%s", "Sample Texts");
+    fclose(fp);
+    return 0;
+  }
+</pre></code></p>
+<ul>
+<li>The above example will create a file called fileName.txt.</li>
+<li>The w means that the file is being opened for writing, and if the file does not exist then the new file
+  will be created.</li>
+<li>The fprintf function writes Sample Texts text to the file.</li>
+<li>The fclose function closes the file and releases the memory stream.</li>
+</ul>
+</div>
+
+<!--getc and putc-->
+<div class="content">
+<h1 id="getputc" style="font-family:times new roman;" align="center">C getc and putc</h1>
+<h3>getc</h3>
+<p><strong>getc()</strong> function is the C library function, and it's used to read a character from a file that
+  has been opened in read mode by <strong>fopen()</strong> function.</p><br>
+ <b>Syntax:</b><br>
+ <p><code><pre>
+   int getc( FILE * stream );
+ </pre></code></p>
+ <b>Return Value:</b><br>
+ <ul>
+  <li><strong>getc()</strong> function returns the next requested object from the stream on success.</li>
+  <li>Character values are returned as an unsigned char cast to an int or EOF on the end of the file or error.</li>
+  <li>The function <strong>feof()</strong> and <strong>ferror()</strong> to distinguish between end-of-file and error must be used.</li>
+ </ul>
+ <b>Example:</b><br>
+ <p><code><pre>
+  #include&lt;stdio.h&gt;
+  int main()
+  {
+    FILE *fp = fopen("fileName.txt", "r");
+    int ch = getc(fp);
+    while (ch != EOF)
+    {
+      //To display the contents of the file on the screen
+      putchar(ch);
+      ch = getc(fp);
+    }
+    
+     if (feof(fp))
+      printf("\n Reached the end of file.");
+     else
+      printf("\n Something gone wrong.");
+    fclose(fp);
+     
+    getchar();
+    return 0;
+   }
+ </pre></code></p>
+<h3>putc</h3>
+<p><strong>putc()</strong> function is C library function, and it's used to write a character to the file. This
+  function is used for writing a single character in a stream along with that it moves forward the indicator's position.</p><br>
+<b>Syntax:</b><br>
+<p><code><pre>
+  int putc( int c, FILE * stream );
+</pre></code></p>
+<b>Example:</b><br>
+<p><code><pre>
+  int main (void)
+  {
+    FILE * fileName;
+    char ch;
+    fileName = fopen("anything.txt","wt");
+        for (ch = 'D' ; ch <= 'S' ; ch++) 
+        {
+            putc (ch , fileName);
+        }
+    fclose (fileName);
+    return 0;
+  }
+</pre></code></p>
+</div>
+
+<!--getw and putw-->
+<div class="content">
+<h1 id="getputw" style="font-family:times new roman;" align="center">C getw and putw</h1>
+ <h3>getw</h3>
+ <p>C getw function is used to read an integer from a file that has been opened in read mode. It is a file handling 
+  function, which is used for reading integer values.</p>
+ <b>Syntax:</b><br>
+ <p><code><pre>
+   int getw( FILE * stream );
+ </pre></code></p>
+ <h3>putw</h3>
+ <p>C putw function is used to write an integer to the file.</p>
+ <b>Syntax:</b><br>
+ <p><code><pre>
+   int putw( int c, FILE * stream );
+ </pre></code></p>
+ <b>Example:</b><br>
+ <p><code><pre>
+   int main (void)
+   {
+     FILE *fileName;
+     int i=2, j=3, k=4, n;
+     fileName = fopen ("anything.c","w");
+     putw(i, fileName);
+     putw(j, fileName);
+     putw(k, fileName);
+     fclose(fileName);
+ 
+    fileName = fopen ("test.c","r");
+    while(getw(fileName)! = EOF)
+    {
+      n= getw(fileName);
+      printf("Value is %d \t: ", n);
+    }
+    fclose(fp);
+    return 0;
+  }
+ </pre></code></p>
+</div>
+
+
+<!--fprintf and fscanf-->
+<div class="content">
+<h1 id="fprintscanf" style="font-family:times new roman;" align="center">C fprintf and fscanf</h1>
+<h3>printf</h3>
+<p>C fprintf function pass arguments according to the specified format to the file indicated by the
+  stream. This function is implemented in file related programs for writing formatted data in any file.</p>
+<b>Syntax:</b><br>
+<p><code><pre>
+  int fprintf(FILE *stream, const char *format, ...)
+</pre></code></p>
+<b>Example:</b><br>
+<p><code><pre>
+  int main (void) 
+  {
+    FILE *fileName;
+    fileName = fopen("anything.txt","r");
+    fprintf(fileName, "%s %s %d", "Welcome", "to",  2018);
+    fclose(fileName);
+    return(0);
+  }
+</pre></code></p>
+<h3>scanf</h3>
+<p>C fscanf function reads formatted input from a file. This function is implemented in file related programs for
+  reading formatted data from any file that is specified in the program.</p><br>
+<b>Syntax:</b><br>
+<p><code><pre>
+  int fscanf(FILE *stream, const char *format, ...)
+</pre></code></p>
+<p>Its return the number of variables that are assigned values, or EOF if no assignments could be made.</p><br>
+<b>Example:</b><br>
+<p><code><pre>
+ int main()
+ {
+    char str1[10], str2[10];
+    int yr;
+    FILE* fileName;
+    fileName = fopen("anything.txt", "w+");
+    fputs("Welcome to", fileName);
+    rewind(fileName);
+    fscanf(fileName, "%s %s %d", str1, str2, &yr);
+    printf("----------------------------------------------- \n");
+    printf("1st word %s \t", str1);
+    printf("2nd word  %s \t", str2);
+    printf("Year-Name  %d \t", yr);
+    fclose(fileName);
+    return (0);
+ }
+</pre></code></p>
+</div>
+
+
+<!--fgets anf fputs-->
+<div class="content">
+<h1 id="fgetputs" style="font-family:times new roman;" align="center">C fgets and fputs</h1>
+<h3>fgets</h3>
+<p>C fgets function is implemented in file related programs for reading strings from any particular file. It gets
+  the strings 1 line each time.</p><br>
+<b>Syntax:</b><br>
+<p><code><pre>
+  char *fgets(char *str, int n, FILE *stream)
+</pre></code></p>
+<b>Example:</b><br>
+<p><code><pre>
+  void main(void)
+  {
+    FILE* fileName;
+    char ch[100];
+    fileName = fopen("anything.txt", "r");
+    printf("%s", fgets(ch, 50, fileName));
+    fclose(fileName);
+  }
+</pre></code></p>
+<ol><li>On success, the function returns the same str parameter.</li>
+<li>C fgets function returns a NULL pointer in case of a failure.</li></ol>
+<h3>fputs</h3>
+<p>C fputs function is implemented in file related programs for writing string to any particular file.
+<b>Suntax:</b><br>
+<p><code><pre>
+  int fputs(const char *str, FILE *stream)
+</pre></code></p>
+<b>Example:</b>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+ int main()
+ {
+    FILE *fp;
+    fp = fopen("fileName.txt","w");
+
+    fputs("This is a sample text file.", fp);
+    fputs("This file contains some sample text data.", fp);
+
+    fclose(fp);
+    return 0; 
+ }
+</pre></code></p>
+<p><strong>NOTE:</strong>In this function returns non-negative value, otherwise returns EOF on error.</p>
+</div>
+
+<!--feof-->
+<div class="content">
+<h1 id="feof" style="font-family:times new roman;" align="center">C feof</h1>
+<p>C feof function is used to determine if the end of the file (stream), specified has been reached or not. This
+  function keeps on searching the end of file (eof) in your file program.</p><br>
+<b>Syntax:</b><br>
+<p><code><pre>
+   int feof(FILE *stream)
+</pre></code></p>
+<b>Example:</b><br>
+<p><code><pre>
+ #include&lt;stdio.h&gt;
+ int main()
+ { 
+  FILE *filee = NULL; 
+  char buf[50]; 
+  filee = fopen("infor.txt","r"); 
+  if(filee) 
+    { 
+         while(!feof(filee)) 
+         { 
+             fgets(buf, sizeof(buf), filee); 
+             puts(buf); 
+         } 
+         fclose(filee); 
+    } 
+   return 0; 
+ }
+</pre></code></p>
+<h4>OUTPUT:</h4><br>
+ <div id="ifelse">This is a sample text file.<br><br>This file contains some sample text data.<br>
+  ---------------------------------------<br>Process exited after 0.987seconds with return value 0<br>Press any key to continue....<br></div>
+<p>C feof function returns true in case end of file is reached, otherwise it's return false.</p>
+<strong>Explanation:</strong>
+<ol><li>It first tries to open a text file infor.txt as read-only mode.</li>
+ <li>Then as the file gets opened successfully to read, it initiates the while loop.</li>
+ <li>The iteration continues until all the statement/lines of your text file get to read as well as displayed.</li></ol>
+Lastly, you have to close the file.
+</div>
+</body>
+</html>

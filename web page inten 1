@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>FIRST ASSIGNMENT</title>
+        <link rel="stylesheet" href="style.css ">
+
+    </head>
+    <body>
+        <div class="hero">
+            <div class="navbar">
+                <img src="C:\Users\aditya\Downloads\logo.jpg" class="logo">
+                <button type="button">about us</button>
+                <button type="button">contact us</button>
+            </div>
+            <div class="content">
+                <large>WELCOME TO THE WORLD OF</large>
+                <h1>DEVILS AND EVILS</h1>
+                <button type="button">lets explore</button>
+            </div>
+            
+
+            <div class="fire">
+                <img src="C:\Users\aditya\Pictures\fire bubble.png">
+                <img src="C:\Users\aditya\Pictures\fire bubble.png">
+                <img src="C:\Users\aditya\Pictures\fire bubble.png">
+                <img src="C:\Users\aditya\Pictures\fire bubble.png">
+                <img src="C:\Users\aditya\Pictures\fire bubble.png">
+                <img src="C:\Users\aditya\Pictures\fire bubble.png">
+                <img src="C:\Users\aditya\Pictures\fire bubble.png">
+                <img src="C:\Users\aditya\Pictures\fire bubble.png">
+            </div>
+            <form action="list">
+                <p>
+                <input type="text" name="text" placeholder="user name" ></p>
+                <p></p>
+                <p></p>
+                <p>
+                <input type="email" name="email" placeholder="email"></p>
+                <p>
+                <input type="date" name="date" palceholder="date of birth"></p>
+                <p>
+                <input type="password" name="password" placeholder="password">
+                <button type="button">register</button>
+                
+                
+                
+            </form>
+            
+
+        </div>
+    </body>
+</html>    
